@@ -308,7 +308,7 @@ _G.packer_plugins = {
     url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
-    after = { "cmp-path", "cmp-treesitter", "nvim-autopairs", "cmp-buffer", "cmp-calc", "cmp-cmdline", "cmp-spell", "cmp-nvim-lua", "cmp-emoji", "cmp-nvim-lsp" },
+    after = { "cmp-calc", "cmp-cmdline", "cmp-emoji", "cmp-nvim-lsp", "cmp-path", "cmp-treesitter", "cmp-spell", "nvim-autopairs", "cmp-nvim-lua", "cmp-buffer" },
     config = { "require'configs.cmp'" },
     loaded = false,
     needs_bufread = false,
@@ -460,34 +460,29 @@ time([[Setup for gitsigns.nvim]], false)
 time([[Setup for nvim-colorizer.lua]], true)
 lazy'nvim-colorizer.lua'
 time([[Setup for nvim-colorizer.lua]], false)
--- Config for: LuaSnip
-time([[Config for LuaSnip]], true)
-try_loadstring("\27LJ\2\n3\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\24configs.cmp.luasnip\frequire\0", "config", "LuaSnip")
-time([[Config for LuaSnip]], false)
--- Config for: toggleterm.nvim
-time([[Config for toggleterm.nvim]], true)
-require'configs.toggleterm'
-time([[Config for toggleterm.nvim]], false)
--- Config for: catppuccin
-time([[Config for catppuccin]], true)
-require'configs.catppuccin'
-time([[Config for catppuccin]], false)
--- Config for: vimtex
-time([[Config for vimtex]], true)
-require'configs.vimtex'
-time([[Config for vimtex]], false)
 -- Config for: neotest
 time([[Config for neotest]], true)
 try_loadstring("\27LJ\2\ns\0\0\a\0\6\1\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0004\3\3\0006\4\0\0'\6\3\0B\4\2\0?\4\0\0=\3\5\2B\0\2\1K\0\1\0\radapters\1\0\0\20neotest-plenary\nsetup\fneotest\frequire\3€€À™\4\0", "config", "neotest")
 time([[Config for neotest]], false)
+-- Config for: LuaSnip
+time([[Config for LuaSnip]], true)
+try_loadstring("\27LJ\2\n3\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\24configs.cmp.luasnip\frequire\0", "config", "LuaSnip")
+time([[Config for LuaSnip]], false)
+-- Config for: catppuccin
+time([[Config for catppuccin]], true)
+require'configs.catppuccin'
+time([[Config for catppuccin]], false)
+-- Config for: toggleterm.nvim
+time([[Config for toggleterm.nvim]], true)
+require'configs.toggleterm'
+time([[Config for toggleterm.nvim]], false)
+-- Config for: vimtex
+time([[Config for vimtex]], true)
+require'configs.vimtex'
+time([[Config for vimtex]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd cmp_luasnip ]]
-vim.cmd [[ packadd bufferline.nvim ]]
-
--- Config for: bufferline.nvim
-require'configs.bufferline'
-
 vim.cmd [[ packadd feline.nvim ]]
 
 -- Config for: feline.nvim
@@ -497,6 +492,11 @@ vim.cmd [[ packadd indent-blankline.nvim ]]
 
 -- Config for: indent-blankline.nvim
 require'configs.indent_blankline'
+
+vim.cmd [[ packadd bufferline.nvim ]]
+
+-- Config for: bufferline.nvim
+require'configs.bufferline'
 
 time([[Sequenced loading]], false)
 
@@ -508,6 +508,13 @@ pcall(vim.api.nvim_create_user_command, 'Neogit', function(cmdargs)
         {nargs = '*', range = true, bang = true, complete = function()
           require('packer.load')({'neogit'}, {}, _G.packer_plugins)
           return vim.fn.getcompletion('Neogit ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'Telescope', function(cmdargs)
+          require('packer.load')({'telescope.nvim'}, { cmd = 'Telescope', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'telescope.nvim'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('Telescope ', 'cmdline')
       end})
 pcall(vim.api.nvim_create_user_command, 'PackerSnapshot', function(cmdargs)
           require('packer.load')({'packer.nvim'}, { cmd = 'PackerSnapshot', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
@@ -586,13 +593,6 @@ pcall(vim.api.nvim_create_user_command, 'PackerLoad', function(cmdargs)
           require('packer.load')({'packer.nvim'}, {}, _G.packer_plugins)
           return vim.fn.getcompletion('PackerLoad ', 'cmdline')
       end})
-pcall(vim.api.nvim_create_user_command, 'Telescope', function(cmdargs)
-          require('packer.load')({'telescope.nvim'}, { cmd = 'Telescope', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
-        end,
-        {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'telescope.nvim'}, {}, _G.packer_plugins)
-          return vim.fn.getcompletion('Telescope ', 'cmdline')
-      end})
 pcall(vim.api.nvim_create_user_command, 'NvimTreeFocus', function(cmdargs)
           require('packer.load')({'nvim-tree.lua'}, { cmd = 'NvimTreeFocus', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
@@ -611,8 +611,8 @@ time([[Defining lazy-load commands]], false)
 
 -- Keymap lazy-loads
 time([[Defining lazy-load keymaps]], true)
-vim.cmd [[noremap <silent> gc <cmd>lua require("packer.load")({'Comment.nvim'}, { keys = "gc", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> gb <cmd>lua require("packer.load")({'Comment.nvim'}, { keys = "gb", prefix = "" }, _G.packer_plugins)<cr>]]
+vim.cmd [[noremap <silent> gc <cmd>lua require("packer.load")({'Comment.nvim'}, { keys = "gc", prefix = "" }, _G.packer_plugins)<cr>]]
 time([[Defining lazy-load keymaps]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
@@ -620,9 +620,9 @@ vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
 vim.cmd [[au VimEnter * ++once lua require("packer.load")({'nvim-treesitter'}, { event = "VimEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au BufReadPost * ++once lua require("packer.load")({'true-zen.nvim', 'alternate-toggler'}, { event = "BufReadPost *" }, _G.packer_plugins)]]
-vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-cmp'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au BufRead * ++once lua require("packer.load")({'editorconfig.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
+vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-cmp'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufReadPost * ++once lua require("packer.load")({'alternate-toggler', 'true-zen.nvim'}, { event = "BufReadPost *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 
