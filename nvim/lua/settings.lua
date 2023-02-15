@@ -16,6 +16,7 @@ o.clipboard = "unnamedplus"
 o.expandtab = false
 o.shiftwidth = 2
 o.smartindent = true
+o.autoindent = true
 
 o.ignorecase = true
 o.smartcase = true
@@ -24,7 +25,7 @@ o.mouse = "a"
 o.signcolumn = "yes"
 o.splitbelow = true
 o.splitright = true
-o.tabstop = 3
+o.tabstop = 2
 o.termguicolors = true
 o.timeoutlen = 400
 o.undofile = true

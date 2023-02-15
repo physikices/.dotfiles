@@ -27,9 +27,9 @@ cmp.setup {
 		expand = function(args) require("luasnip").lsp_expand(args.body) end,
 	},
 	sources = cmp.config.sources({
-		{ name = "nvim_lsp", max_item_count = 10},
-	 },{
 		{ name = "luasnip" },
+	 },{
+		{ name = "nvim_lsp", max_item_count = 10},
 	 },{
 		{ name = "buffer" },
 	 },{
@@ -73,10 +73,10 @@ cmp.setup {
 			-- vim_item.kind = require "lspkind".symbol_map[vim_item.kind]
 			vim_item.kind = string.format("%s %s", icons[vim_item.kind], vim_item.kind)
 			vim_item.menu = ({
+				luasnip = "[snp]",
 				nvim_lsp = "[lsp]",
 				buffer = "[buf]",
 				--treesitter = "[tre]",
-				luasnip = "[snp]",
 				--nvim_lua = "[nvl]",
 				path = "[pth]",
 				--spell = "[spl]",

@@ -2,6 +2,20 @@ local m = vim.keymap.set
 local ns = { noremap = true, silent = true }
 local s = { silent = true }
 
+-- Delete a word backwards
+m('n', 'dw', 'vb"_d')
+-- New tab
+m('n', 'te', ':tabedit')
+-- Split window
+m('n', 'ss', ':split<Return><C-w>w')
+m('n', 'sv', ':vsplit<Return><C-w>w')
+-- Move window
+m('n', '<Space>', '<C-w>w')
+m('', 'sh', '<C-w>h')
+m('', 'sk', '<C-w>k')
+m('', 'sj', '<C-w>j')
+m('', 'sl', '<C-w>l')
+
 m('n', '<leader>q', '<cmd>q<cr>', ns)
 m('n', '<leader>w', '<cmd>w<cr>', ns)
 

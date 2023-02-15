@@ -83,6 +83,7 @@ use "neovim/nvim-lspconfig" {
 	 "WhoIsSethDaniel/mason-tool-installer.nvim",
   },
 }
+use "glepnir/lspsaga.nvim" { after = "nvim-lspconfig", config = "configs.lsp.saga" }
 -- cmp
 use "hrsh7th/nvim-cmp" {
   module = "cmp",
