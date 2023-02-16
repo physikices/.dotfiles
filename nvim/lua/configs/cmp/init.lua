@@ -27,9 +27,12 @@ cmp.setup {
 		expand = function(args) require("luasnip").lsp_expand(args.body) end,
 	},
 	sources = cmp.config.sources({
+		{ name = "nvim_lsp",
+			entry_filter = function (entry)
+				return require("cmp.types").lsp.CompletionItemKind[entry:get_kind()] ~= 'Text'
+			end
+		},
 		{ name = "luasnip" },
-	 },{
-		{ name = "nvim_lsp", max_item_count = 10},
 	 },{
 		{ name = "buffer" },
 	 },{
@@ -68,13 +71,13 @@ cmp.setup {
 				Struct = "פּ",
 				Event = "",
 				Operator = "",
-				TypeParameter = "",
+				TypeParameter = " ",
 			}
 			-- vim_item.kind = require "lspkind".symbol_map[vim_item.kind]
 			vim_item.kind = string.format("%s %s", icons[vim_item.kind], vim_item.kind)
 			vim_item.menu = ({
-				luasnip = "[snp]",
 				nvim_lsp = "[lsp]",
+				luasnip = "[snp]",
 				buffer = "[buf]",
 				--treesitter = "[tre]",
 				--nvim_lua = "[nvl]",
@@ -84,7 +87,7 @@ cmp.setup {
 				--calc = "[clc]",
 				--cmdline = "[cmd]",
 			})[entry.source.name]
-		  if source == "luasnip" or source == "nvim_lsp" then
+		  if vim_item.source == "luasnip" or vim_item.source == "nvim_lsp" then
 		  	vim_item.dup = 0
 		  end
 			return vim_item
