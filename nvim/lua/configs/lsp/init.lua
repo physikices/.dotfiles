@@ -30,6 +30,8 @@ require("mason-tool-installer").setup {
 	ensure_installed = {
 		-- formatters
 		"stylua",
+		"prettier",
+		"prettierd",
 
 		-- linters
 		-- "ltex-ls",
@@ -48,6 +50,8 @@ mason_lspconfig.setup {
 		"fortls",
 		-- "ltex",
 		"texlab",
+		"tsserver",
+		"jsonls",
 	},
 	automatic_installation = true,
 }
@@ -174,5 +178,29 @@ mason_lspconfig.setup_handlers {
 			},
 		})
 	end,
+	["jsonls"] = function ()
+		lsp.jsonls.setup(opt{
+			settings = {
+				json = {
+					schemas = require("schemastore").json.schemas(),
+					validate = {enable = true},
+				},
+			},
+		})
+	end,
+	["tsserver"] = function ()
+		lsp.tsserver.setup({
+			cmd = {"typescript-language-server", "--stdio"},
+			filetypes = {
+				"javascript",
+				"javascriptreact",
+				"javascript.jsx",
+				"typescript",
+				"typescriptreact",
+				"typescript.tsx"
+			},
+			root_dir = require "lspconfig/util".root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
+		})
+	end
 }
 
