@@ -126,3 +126,14 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 alias luamake=/home/rodrigo/.config/lsp/lua-language-server/3rd/luamake/luamake
 export PATH="${HOME}/.config/lsp/lua-language-server/bin:${PATH}"
 export PATH="${HOME}/.cargo/bin:${PATH}"
+
+# comando git para copiar subdiretorios github
+git-svn(){
+  if [[ ! -z "$1" && ! -z "$2" ]]; then
+          echo "Iniciando o clone/cópia ..."
+          repo=$(echo $1 | sed 's/\/$\|.git$//')
+          svn export "$repo/trunk/$2"
+  else
+          echo "Use: git-svn <repository> <subdirectory>"
+  fi  
+}
