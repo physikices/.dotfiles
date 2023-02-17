@@ -20,19 +20,23 @@ cmp.setup {
 			winhighlight = "Normal:CmpPmenu,FloatBorder:CmpBorder,CursorLine:PmenuSel,Search:None",
 		},
 	},
-	experimental = {
-		ghost_text = true,
-	},
+	-- experimental = {
+	-- 	ghost_text = true,
+	-- },
 	snippet = {
 		expand = function(args) require("luasnip").lsp_expand(args.body) end,
 	},
 	sources = cmp.config.sources({
+		{ name = "luasnip",
+			entry_filter = function(entry)
+        return require("cmp").lsp.CompletionItemKind.Text ~= entry:get_kind()
+      end
+		},
 		{ name = "nvim_lsp",
 			entry_filter = function (entry)
 				return require("cmp.types").lsp.CompletionItemKind[entry:get_kind()] ~= 'Text'
 			end
 		},
-		{ name = "luasnip" },
 	 },{
 		{ name = "buffer" },
 	 },{
@@ -76,8 +80,8 @@ cmp.setup {
 			-- vim_item.kind = require "lspkind".symbol_map[vim_item.kind]
 			vim_item.kind = string.format("%s %s", icons[vim_item.kind], vim_item.kind)
 			vim_item.menu = ({
-				nvim_lsp = "[lsp]",
 				luasnip = "[snp]",
+				nvim_lsp = "[lsp]",
 				buffer = "[buf]",
 				--treesitter = "[tre]",
 				--nvim_lua = "[nvl]",

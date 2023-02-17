@@ -100,7 +100,7 @@ mason_lspconfig.setup_handlers {
 	end,
 
 	["fortls"] = function()
-		lsp.fortls.setup({
+		lsp.fortls.setup(opt{
 			cmd = {
 				'fortls',
 				'--notify_init',

@@ -135,6 +135,9 @@ use "Pocco81/true-zen.nvim" {
 	config = "configs.truezen",
 }
 
+use "mg979/vim-visual-multi" {}
+use "gcmt/wildfire.vim" {}
+use "tpope/vim-surround" {}
 -- git
 use "TimUntersberger/neogit" {
 	cmd = "Neogit",
