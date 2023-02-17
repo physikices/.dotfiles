@@ -146,10 +146,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # move focus one workspace left
-bindsym $mod+m workspace next
+bindsym $mod+b workspace next
 
 # move focus one workspace left
-bindsym $mod+n workspace prev	
+bindsym $mod+comma workspace prev	
 
 # 3] split in horizontal orientation
 # bindsym $mod+h split h
