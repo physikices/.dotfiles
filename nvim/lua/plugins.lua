@@ -86,7 +86,11 @@ use "neovim/nvim-lspconfig" {
 		"b0o/schemastore.nvim",
 	},
 }
-use "glepnir/lspsaga.nvim" { after = "nvim-lspconfig", config = "configs.lsp.saga" }
+use "glepnir/lspsaga.nvim" {
+	after = "nvim-lspconfig",
+	config = "configs.lsp.saga",
+}
+
 -- cmp
 use "hrsh7th/nvim-cmp" {
 	module = "cmp",
@@ -103,7 +107,7 @@ use "hrsh7th/nvim-cmp" {
 		{ "hrsh7th/cmp-emoji", after = "nvim-cmp" },
 		{ "hrsh7th/cmp-calc", after = "nvim-cmp" },
 		{
-			"L3MON4D3/LuaSnip",
+			"L3MON4D3/LuaSnip", -- Em observação
 			wants = "friendly-snippets",
 			config = function() require "configs.cmp.luasnip" end,
 		},
@@ -155,7 +159,17 @@ use "lewis6991/gitsigns.nvim" {
 use "nvim-telescope/telescope.nvim" {
 	module = "telescope",
 	cmd = "Telescope",
-	config = function() require("telescope").setup() end,
+	requires = {
+		{ "nvim-lua/popup.nvim", after = "telescope.nvim" },
+		{
+			"nvim-telescope/telescope-media-files.nvim",
+			after = "telescope.nvim",
+			config = function ()
+				require("telescope").load_extension("media_files")
+			end
+		},
+	},
+	config = "configs.telescope",
 }
 use "nvim-telescope/telescope-fzf-native.nvim" {
 	after = "telescope.nvim",

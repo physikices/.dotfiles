@@ -15,10 +15,19 @@ m('', 'sh', '<C-w>h')
 m('', 'sk', '<C-w>k')
 m('', 'sj', '<C-w>j')
 m('', 'sl', '<C-w>l')
+-- Move Lines
+m('v', '<leader>j', ":m '>+1<cr>gv=gv", ns)
+m('v', '<leader>k', ":m '<-2<cr>gv=gv", ns)
+m('n', '<leader>j', ':m.+1<CR>==', ns)
+m('n', '<leader>k', ':m.-2<CR>==', ns)
+-- m('i', '<leader>j', '<esc><cmd>m .+1<cr>==gi', ns)
+-- m('i', '<leader>k', '<esc><cmd>m .-2<cr>==gi', ns)
 
-m('n', '<leader>q', '<cmd>q<cr>', ns)
 m('n', '<leader>w', '<cmd>w<cr>', ns)
+m('n', '<leader>q', '<cmd>q<cr>', ns)
 
+-- indent
+m('n', '<leader>i', 'gg=G', ns)
 
 -- bufferline
 m("n", "<leader>x", "<cmd> bp|sp|bn|bd! <CR>") -- close buffer
@@ -41,40 +50,40 @@ m("n", "<leader>e", "<cmd> NvimTreeFocus <CR>", ns)
 
 -- lsp 
 vim.api.nvim_create_autocmd('LspAttach', {
-  desc = 'Acciones LSP',
-  callback = function()
-    local bufmap = function(mode, lhs, rhs)
-      local opts = {buffer = true}
-      vim.keymap.set(mode, lhs, rhs, opts)
-    end
-    -- Muestra información sobre símbolo debajo del cursor
-    bufmap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
-    -- Saltar a definición
-    bufmap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>')
-    -- Saltar a declaración
-    bufmap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>')
-    -- Mostrar implementaciones
-    bufmap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>')
-    -- Saltar a definición de tipo
-    bufmap('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>')
-    -- Listar referencias
-    bufmap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>')
-    -- Mostrar argumentos de función
-    bufmap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<cr>')
-    -- Renombrar símbolo
-    bufmap('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>')
-    -- Listar "code actions" disponibles en la posición del cursor
-    bufmap('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>')
-    bufmap('x', '<F4>', '<cmd>lua vim.lsp.buf.range_code_action()<cr>')
-    -- Mostrar diagnósticos de la línea actual
-    bufmap('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>')
-    -- Saltar al diagnóstico anterior
-    bufmap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
-    -- Saltar al siguiente diagnóstico
-    bufmap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>')
-	 -- Telescop/LSP referencias
-	 bufmap('n', '<leader>r', '<cmd>Telescope lsp_references<CR>')
-  end
+	desc = 'Acciones LSP',
+	callback = function()
+		local bufmap = function(mode, lhs, rhs)
+			local opts = {buffer = true}
+			vim.keymap.set(mode, lhs, rhs, opts)
+		end
+		-- Muestra información sobre símbolo debajo del cursor
+		bufmap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
+		-- Saltar a definición
+		bufmap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>')
+		-- Saltar a declaración
+		bufmap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>')
+		-- Mostrar implementaciones
+		bufmap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>')
+		-- Saltar a definición de tipo
+		bufmap('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>')
+		-- Listar referencias
+		bufmap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>')
+		-- Mostrar argumentos de función
+		bufmap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<cr>')
+		-- Renombrar símbolo
+		bufmap('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>')
+		-- Listar "code actions" disponibles en la posición del cursor
+		bufmap('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>')
+		bufmap('x', '<F4>', '<cmd>lua vim.lsp.buf.range_code_action()<cr>')
+		-- Mostrar diagnósticos de la línea actual
+		bufmap('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>')
+		-- Saltar al diagnóstico anterior
+		bufmap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
+		-- Saltar al siguiente diagnóstico
+		bufmap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>')
+		-- Telescop/LSP referencias
+		bufmap('n', '<leader>r', '<cmd>Telescope lsp_references<CR>')
+	end
 })
 -- truezen
 m("n", "<leader>zz", ":TZAtaraxis<CR>", s)
@@ -102,6 +111,7 @@ m("n", "<leader>vo", "<cmd> Telescope oldfiles <CR>") --"	find oldfiles"
 m("n", "<leader>vc", "<cmd> Telescope git_commits <CR>") --"	git commits"
 m("n", "<leader>vs", "<cmd> Telescope git_status <CR>") --"  git status"
 m("n", "<leader>vt", "<cmd> Telescope terms <CR>") --"	pick hidden term"
+m("n", "<leader>mf", "<cmd> Telescope media_files <CR>") --"	pick hidden term"
 
 -- packer
 m("n", "<leader>p", function()
