@@ -13,7 +13,7 @@ local on_attach = function(client, bufnr)
 	if caps.definitionProvider then vim.api.nvim_buf_set_option(bufnr, "tagfunc", "v:lua.vim.lsp.tagfunc") end
 
 	if client.supports_method "textDocument/formatting" then
-		keymap("n", "<leader>k", "<cmd>lua vim.lsp.buf.format({async = true})<CR>", opts)
+		keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.format({async = true})<CR>", opts)
 		-- elseif client.server_capabilities.document_range_formatting then
 		-- 	keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
 	end
