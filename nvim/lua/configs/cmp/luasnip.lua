@@ -10,7 +10,7 @@ ls.config.set_config {
 	ext_opts = {
 		[types.choiceNode] = {
 			active = {
-				virt_text = { { "choiceNode", "Comment" } },
+				virt_text = { { "●", "GruvboxBlue" } },
 			},
 		},
 	},
@@ -24,7 +24,24 @@ ls.config.set_config {
 
 require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/snippets/"})
 
--- require("luasnip.loaders.from_lua").lazy_load { paths = "./snippets/luasnip" }
+require("luasnip.loaders.from_lua").lazy_load { paths = "./snippets/luasnip" }
 -- require("luasnip.loaders.from_snipmate").lazy_load { paths = "./snippets/snipmate" }
-require("luasnip.loaders.from_vscode").lazy_load() -- use it with: rafamadriz/friendly-snippets. load snippets in the vscode, from friendly-snippets. If the language has too many then it might be a tad slow
+-- require("luasnip.loaders.from_vscode").lazy_load() -- use it with: rafamadriz/friendly-snippets. load snippets in the vscode, from friendly-snippets. If the language has too many then it might be a tad slow
 require("luasnip.loaders.from_lua").lazy_load { paths = "./snippets/luasnip" }require("luasnip.loaders.from_vscode").lazy_load { paths = vim.fn.stdpath "config" .. ps .. "snippets" } -- load some custom snippets
+
+
+vim.keymap.set({ "i", "s" }, "<C-l>", function()
+	if ls.choice_active() then
+		ls.change_choice(1)
+	else
+		-- print current time
+		local t = os.date("*t")
+		local time = string.format("%02d:%02d:%02d", t.hour, t.min, t.sec)
+		print(time)
+	end
+end)
+vim.keymap.set({ "i", "s" }, "<C-h>", function()
+	if ls.choice_active() then
+		ls.change_choice(-1)
+	end
+end)

@@ -17,3 +17,9 @@ a("BufWritePost", {
 		end
 	end,
 })
+
+vim.cmd([[
+autocmd BufEnter */snippets/tex/*.lua nnoremap <silent> <buffer> <CR> /-- End Refactoring --<CR>O<Esc>O
+]])
+
+vim.cmd([[command! LuaSnipEdit :lua require("luasnip.loaders.from_lua").edit_snippet_files()]])

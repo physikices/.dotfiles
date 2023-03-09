@@ -123,3 +123,5 @@ m("n", "<leader>p", function()
 		vim.notify("Error: Packer is missing! Installing it...", vim.log.levels.WARN)
 	end
 end, s)
+
+m("n", "<leader><CR>", "<cmd>LuaSnipEdit<cr>", ns)
