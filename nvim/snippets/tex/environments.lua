@@ -167,7 +167,7 @@ return
 		s({trig="enn", snippetType="autosnippet"},
 			fmta(
 				[[
-				\begin{enumerate}
+				\begin{enumerate}[label=\alph *)]
 						\item <>
 				\end{enumerate}
 				]],
@@ -212,6 +212,42 @@ return
 				}
 			),
 			{ condition = line_begin }
+		),
+		-- SUBEQUATIONS
+		s({trig="sbe", snippetType="autosnippet"},
+			fmta(
+				[[
+				\begin{subequations}
+						\begin{align}
+								<>\label{eq:<>}\\
+								<>\label{eq:<>}
+						\end{align}
+				\end{subequations}
+				]],
+				{
+					i(1),
+					i(2),
+					i(3),
+					d(4, get_visual),
+				}
+			),
+			{ condition = line_begin }
+		),
+		-- DMATH
+		s({trig="dmt", snippetType="autosnippet"},
+			fmta(
+				[[
+				\begin{dmath*}
+						<>\condition{<> $\displaystyle<>$}
+				\end{dmath*}
+				]],
+				{
+					i(1),
+					i(2),
+					i(3),
+				}
+			),
+			{condition = line_begin}
 		),
 		-- End Refactoring --
 	}

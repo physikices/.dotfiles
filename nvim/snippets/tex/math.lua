@@ -203,7 +203,7 @@ return
 		-- UNIT VECTOR WITH HAT, i.e. \uvec{}
 		s({trig = "([^%a])uv", wordTrig = false, regTrig = true, snippetType="autosnippet"},
 			fmta(
-				"<>\\uvec{<>}",
+				"<>\\hat{<>}",
 				{
 					f( function(_, snip) return snip.captures[1] end ),
 					d(1, get_visual),
@@ -290,21 +290,22 @@ return
 			),
 			{condition = tex.in_mathzone}
 		),
-		-- DERIVATIVE with denominator only
-		s({trig = "([^%a])dV", wordTrig = false, regTrig = true, snippetType="autosnippet"},
+		-- DERIVATIVE ordinary 
+		s({trig = "([^%a])doo", wordTrig = false, regTrig = true, snippetType="autosnippet"},
 			fmta(
-				"<>\\dvOne{<>}",
+				"<>\\frac{d<>}{d<>}",
 				{
 					f( function(_, snip) return snip.captures[1] end ),
-					d(1, get_visual),
+					i(1),
+					i(2)
 				}
 			),
 			{condition = tex.in_mathzone}
 		),
-		-- DERIVATIVE with numerator and denominator
-		s({trig = "([^%a])dvv", wordTrig = false, regTrig = true, snippetType="autosnippet"},
+		-- DERIVATIVE partial 
+		s({trig = "([^%a])del", wordTrig = false, regTrig = true, snippetType="autosnippet"},
 			fmta(
-				"<>\\dv{<>}{<>}",
+				"<>\\frac{\\partial <>}{\\partial <>}",
 				{
 					f( function(_, snip) return snip.captures[1] end ),
 					i(1),
@@ -388,11 +389,12 @@ return
 		-- INTEGRAL with upper and lower limit
 		s({trig = "([^%a])intt", wordTrig = false, regTrig = true, snippetType="autosnippet"},
 			fmta(
-				"<>\\int_{<>}^{<>}",
+				"<>\\int\\limits_{<>}^{<>}<>dx",
 				{
 					f( function(_, snip) return snip.captures[1] end ),
 					i(1),
 					i(2),
+					i(3),
 				}
 			),
 			{condition = tex.in_mathzone}
@@ -556,6 +558,31 @@ return
 				t("\\times "),
 			}
 		),
+		-- DERIVATIVE second ordinary 
+		s({trig = "([^%a])d2o", wordTrig = false, regTrig = true, snippetType="autosnippet"},
+			fmta(
+				"<>\\frac{d^{2}<>}{d<>^{2}}",
+				{
+					f( function(_, snip) return snip.captures[1] end ),
+					i(1),
+					i(2)
+				}
+			),
+			{condition = tex.in_mathzone}
+		),
+		-- DERIVATIVE partial 
+		s({trig = "([^%a])d2p", wordTrig = false, regTrig = true, snippetType="autosnippet"},
+			fmta(
+				"<>\\frac{\\partial^{2} <>}{\\partial <>^{2}}",
+				{
+					f( function(_, snip) return snip.captures[1] end ),
+					i(1),
+					i(2)
+				}
+			),
+			{condition = tex.in_mathzone}
+		),
+		--
 		-- End Refactoring --
 	}
 

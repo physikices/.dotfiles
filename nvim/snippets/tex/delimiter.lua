@@ -102,7 +102,7 @@ return
 				}
 			)
 		),
-		-- MEDIA
+		-- LANGLES
 		s({trig = "([^%a])l%<", regTrig = true, wordTrig = false, snippetType="autosnippet"},
 			fmta(
 				"<>\\langle <> \\rangle",
@@ -131,6 +131,17 @@ return
 				}
 			)
 		),
+		-- BIG LANGLES
+		s({trig = "([^%a])L%<", regTrig = true, wordTrig = false, snippetType="autosnippet"},
+			fmta(
+				"<>\\Bigl \\langle <> \\Bigr \\rangle",
+				{
+					f( function(_, snip) return snip.captures[1] end ),
+					d(1, get_visual),
+				}
+			)
+		),
+		--
 		-- End Refactoring --
 }
 
