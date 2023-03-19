@@ -36,7 +36,7 @@ return
 		s({trig = "ann", snippetType="autosnippet"},
 			fmta(
 				[[
-			\annotate{<>}{<>}
+				\annotate{<>}{<>}
 				]],
 				{
 					i(1),
@@ -44,11 +44,11 @@ return
 				}
 			)
 		),
-		-- REFERENCE
+		-- *REFERENCE
 		s({trig = " RR", snippetType="autosnippet", wordTrig=false},
 			fmta(
 				[[
-			~\ref{<>}
+				~\ref{<>}
 				]],
 				{
 					d(1, get_visual),
@@ -58,9 +58,9 @@ return
 		-- DOCUMENTCLASS
 		s({trig = "dcc", snippetType="autosnippet"},
 			fmta(
-				[=[
+				[[
 				\documentclass[<>]{<>}
-				]=],
+				]],
 				{
 					i(1, "a4paper"),
 					i(2, "article"),
@@ -68,7 +68,7 @@ return
 			),
 			{ condition = line_begin }
 		),
-		-- USE A LATEX PACKAGE
+		-- *USE A LATEX PACKAGE
 		s({trig = "pack", snippetType="autosnippet"},
 			fmta(
 				[[
@@ -84,7 +84,7 @@ return
 		s({trig = "inn", snippetType="autosnippet"},
 			fmta(
 				[[
-			\input{<><>}
+				\input{<><>}
 				]],
 				{
 					i(1, "~/dotfiles/config/latex/templates/"),
@@ -93,28 +93,29 @@ return
 			),
 			{ condition = line_begin }
 		),
-		-- LABEL
+		-- *LABEL
 		s({trig = "lbl", snippetType="autosnippet"},
 			fmta(
 				[[
-			\label{<>}
+				\label{<>}
 				]],
 				{
 					d(1, get_visual),
 				}
 			)
 		),
-		-- HPHANTOM
+		-- *HPHANTOM
 		s({trig = "hpp", snippetType="autosnippet"},
 			fmta(
 				[[
-			\hphantom{<>}
+				\hphantom{<>}
 				]],
 				{
 					d(1, get_visual),
 				}
 			)
 		),
+		-- *TODO List
 		s({trig = "TODOO", snippetType="autosnippet"},
 			fmta(
 				[[\TODO{<>}]],

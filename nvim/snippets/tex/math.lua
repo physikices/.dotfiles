@@ -1,5 +1,4 @@
 local ls = require("luasnip")
-
 -- some shorthands...
 local s = ls.snippet
 local sn = ls.snippet_node
@@ -70,7 +69,7 @@ return
 			),
 			{condition = tex.in_mathzone}
 		),
-		-- TEXT SUBSCRIPT
+		-- TEXT SUBSCRIPT 
 		s({trig = 'sd', snippetType="autosnippet", wordTrig=false},
 			fmta("_{\\mathrm{<>}}",
 				{ d(1, get_visual) }
@@ -189,13 +188,14 @@ return
 			),
 			{condition = tex.in_mathzone}
 		),
-		-- DEFAULT UNIT VECTOR WITH SUBSCRIPT, i.e. \unitvector_{}
+		-- DEFAULT UNIT VECTOR WITH SUBSCRIPT, i.e. \unitvector_{} (IMPLENTAR)
 		s({trig = "([^%a])ue", wordTrig = false, regTrig = true, snippetType="autosnippet"},
 			fmta(
-				"<>\\unitvector_{<>}",
+				"<>\\vu*{<>}_{<>}",
 				{
 					f( function(_, snip) return snip.captures[1] end ),
 					d(1, get_visual),
+					i(2),
 				}
 			),
 			{condition = tex.in_mathzone}
@@ -211,7 +211,7 @@ return
 			),
 			{condition = tex.in_mathzone}
 		),
-		-- MATRIX, i.e. \vec
+		-- *MATRIX, i.e. \vec
 		s({trig = "([^%a])mt", wordTrig = false, regTrig = true, snippetType="autosnippet"},
 			fmta(
 				"<>\\mat{<>}",
@@ -234,7 +234,7 @@ return
 			),
 			{condition = tex.in_mathzone}
 		),
-		-- ANGLE
+		-- *ANGLE
 		s({trig = "([^%a])gg", regTrig = true, wordTrig = false, snippetType="autosnippet"},
 			fmta(
 				"<>\\ang{<>}",
@@ -314,7 +314,7 @@ return
 			),
 			{condition = tex.in_mathzone}
 		),
-		-- DERIVATIVE with numerator, denominator, and higher-order argument
+		-- *DERIVATIVE with numerator, denominator, and higher-order argument
 		s({trig = "([^%a])ddv", wordTrig = false, regTrig = true, snippetType="autosnippet"},
 			fmta(
 				"<>\\dvN{<>}{<>}{<>}",
@@ -327,7 +327,7 @@ return
 			),
 			{condition = tex.in_mathzone}
 		),
-		-- PARTIAL DERIVATIVE with denominator only
+		-- *PARTIAL DERIVATIVE with denominator only
 		s({trig = "([^%a])pV", wordTrig = false, regTrig = true, snippetType="autosnippet"},
 			fmta(
 				"<>\\pdvOne{<>}",
@@ -338,7 +338,7 @@ return
 			),
 			{condition = tex.in_mathzone}
 		),
-		-- PARTIAL DERIVATIVE with numerator and denominator
+		-- *PARTIAL DERIVATIVE with numerator and denominator
 		s({trig = "([^%a])pvv", wordTrig = false, regTrig = true, snippetType="autosnippet"},
 			fmta(
 				"<>\\pdv{<>}{<>}",
@@ -350,7 +350,7 @@ return
 			),
 			{condition = tex.in_mathzone}
 		),
-		-- PARTIAL DERIVATIVE with numerator, denominator, and higher-order argument
+		-- *PARTIAL DERIVATIVE with numerator, denominator, and higher-order argument
 		s({trig = "([^%a])ppv", wordTrig = false, regTrig = true, snippetType="autosnippet"},
 			fmta(
 				"<>\\pdvN{<>}{<>}{<>}",
@@ -414,7 +414,7 @@ return
 		-- BEGIN STATIC SNIPPETS
 		--
 
-		-- DIFFERENTIAL, i.e. \diff
+		-- *DIFFERENTIAL, i.e. \diff
 		s({trig = "df", snippetType="autosnippet", priority=2000},
 			{
 				t("\\diff"),

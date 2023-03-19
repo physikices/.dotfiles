@@ -49,7 +49,7 @@ return
 				{
 					i(1),
 					d(2, get_visual),
-					rep(1),
+				rep(1),
 				}
 			),
 			{condition = line_begin}
@@ -66,7 +66,7 @@ return
 					i(1),
 					i(2),
 					d(3, get_visual),
-					rep(1),
+				rep(1),
 				}
 			),
 			{ condition = line_begin }
@@ -84,7 +84,7 @@ return
 					i(2),
 					i(3),
 					d(4, get_visual),
-					rep(1),
+				rep(1),
 				}
 			),
 			{ condition = line_begin }
@@ -238,7 +238,7 @@ return
 			fmta(
 				[[
 				\begin{dmath*}
-						<>\condition{<> $\displaystyle<>$}
+						<>\condition{<> $\displaystyle{<>}$}
 				\end{dmath*}
 				]],
 				{
@@ -249,6 +249,28 @@ return
 			),
 			{condition = line_begin}
 		),
+		-- WRAPFIGURE
+		s({trig = "wfig"},
+			fmta(
+				[[
+				\setlength\intextsep{0pt}
+				\begin{wrapfigure}[9]{<>}{0.5\textwidth}
+					\centering
+					\includegraphics[width=.45\textwidth]{assets/<>}
+					\label{fig:<>}
+					\caption{<>}
+				\end{wrapfigure}
+				]],
+				{
+					c(1,{t("r"),t("l")}),
+					i(2),
+					i(3),
+					i(4),
+				}
+			),
+			{ condition = line_begin }
+		),
+		--
 		-- End Refactoring --
-	}
+}
 
