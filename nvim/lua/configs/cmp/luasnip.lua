@@ -26,7 +26,7 @@ require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/snippets/"})
 
 require("luasnip.loaders.from_lua").lazy_load { paths = "./snippets/luasnip" }
 -- require("luasnip.loaders.from_snipmate").lazy_load { paths = "./snippets/snipmate" }
--- require("luasnip.loaders.from_vscode").lazy_load() -- use it with: rafamadriz/friendly-snippets. load snippets in the vscode, from friendly-snippets. If the language has too many then it might be a tad slow
+require("luasnip.loaders.from_vscode").lazy_load() -- use it with: rafamadriz/friendly-snippets. load snippets in the vscode, from friendly-snippets. If the language has too many then it might be a tad slow
 require("luasnip.loaders.from_lua").lazy_load { paths = "./snippets/luasnip" }require("luasnip.loaders.from_vscode").lazy_load { paths = vim.fn.stdpath "config" .. ps .. "snippets" } -- load some custom snippets
 
 

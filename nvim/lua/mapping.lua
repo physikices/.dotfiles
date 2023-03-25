@@ -22,6 +22,11 @@ m('n', '<leader>j', ':m.+1<CR>==', ns)
 m('n', '<leader>k', ':m.-2<CR>==', ns)
 -- m('i', '<leader>j', '<esc><cmd>m .+1<cr>==gi', ns)
 -- m('i', '<leader>k', '<esc><cmd>m .-2<cr>==gi', ns)
+-- navigate within insert mode
+m("i", "<C-h>", "<Left>") -- "   move left"
+m("i", "<C-l>", "<Right>") -- " move right"
+m("i", "<C-j>", "<Down>") -- " move down"
+m("i", "<C-k>", "<Up>") -- " move up" },
 
 m('n', '<leader>w', '<cmd>w<cr>', ns)
 m('n', '<leader>q', '<cmd>q<cr>', ns)
@@ -69,7 +74,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		-- Listar referencias
 		bufmap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>')
 		-- Mostrar argumentos de función
-		bufmap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<cr>')
+		bufmap('n', '<C-n>', '<cmd>lua vim.lsp.buf.signature_help()<cr>')
 		-- Renombrar símbolo
 		bufmap('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>')
 		-- Listar "code actions" disponibles en la posición del cursor
