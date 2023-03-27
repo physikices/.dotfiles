@@ -84,5 +84,28 @@ local normal_frame =s("nfrm", fmt([[
 ))
 table.insert(snippets, normal_frame)
 
+local two_columns =s("tcol", fmt([[
+	\begin{columns}
+		\column{0.5\textwidth}
+		<>
+		\begin{itemize}
+			\item <> 
+		\end{itemize}
+
+		\column{0.5\textwidth}
+		\imagem{<>}{<>}{<>}
+	\end{columns}
+	<>
+
+]],{
+		i(1, "title column itens"),
+		i(2, "first item"),
+		i(3, "img name"),
+		i(4, "img ref"),
+		i(5, "img caption"),
+		i(0)
+	},{ delimiters = "<>" }
+))
+table.insert(snippets, two_columns)
 
 return snippets, autosnippets
