@@ -271,6 +271,29 @@ return
 			{ condition = line_begin }
 		),
 		--
+		s({trig="bcs", snippetType="autosnippet"},
+			fmta(
+				[[
+				\begin{eqnarray*}
+					<> =
+					\begin{cases}
+					  <>, &\text{se $<>$}\\
+					  <>, &\text{se $<>$}\\
+					\end{cases}
+				\end{eqnarray*}
+				]],
+				{
+					i(1),
+					i(2),
+					i(3),
+					i(4),
+					i(5),
+				}
+			),
+			{ condition = line_begin }
+		),
+		--
+		--
 		-- End Refactoring --
 }
 

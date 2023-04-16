@@ -38,6 +38,7 @@ brazil
 \RequirePackage{array,booktabs,bookmark,multirow}
 \RequirePackage{ragged2e}
 \RequirePackage{graphicx,url}
+\RequirePackage{aligned-overset}
 % -------------------------------------
 % Declarar novos pacotes a partir daqui
 % -------------------------------------

@@ -141,6 +141,16 @@ return
 				}
 			)
 		),
+		-- Delimitador limites de integração
+		s({trig = "([^%a])Bb", regTrig = true, wordTrig = false, snippetType="autosnippet"},
+			fmta(
+				"\\Bigg|_{<>}^{<>}",
+				{
+					f( function(_, snip) return snip.captures[1] end ),
+					d(1, get_visual),
+				}
+			)
+		),
 		--
 		-- End Refactoring --
 }

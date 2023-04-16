@@ -389,12 +389,13 @@ return
 		-- INTEGRAL with upper and lower limit
 		s({trig = "([^%a])intt", wordTrig = false, regTrig = true, snippetType="autosnippet"},
 			fmta(
-				"<>\\int\\limits_{<>}^{<>}<>dx",
+				"<>\\int\\limits_{<>}^{<>}<>\\,d{<>}",
 				{
 					f( function(_, snip) return snip.captures[1] end ),
 					i(1),
 					i(2),
 					i(3),
+					i(4),
 				}
 			),
 			{condition = tex.in_mathzone}
@@ -582,7 +583,18 @@ return
 			),
 			{condition = tex.in_mathzone}
 		),
-		--
+		-- VECTOR linhado,
+		s({trig = "([^%a])vl", wordTrig = false, regTrig = true, snippetType="autosnippet"},
+			fmta(
+				"<>\\vec{<>}^{\\;\\prime}",
+				{
+					f( function(_, snip) return snip.captures[1] end ),
+					d(1, get_visual),
+				}
+			),
+			{condition = tex.in_mathzone}
+		),
+		-- Barra de substituição dos limites de integração
 		-- End Refactoring --
 	}
 
