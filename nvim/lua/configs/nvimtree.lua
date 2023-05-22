@@ -16,7 +16,7 @@ nvimtree.setup {
 	view = {
 		width = 25,
 		side = "left",
-		hide_root_folder = true,
+		hide_root_folder = false,
 	},
 	git = {
 		enable = false,

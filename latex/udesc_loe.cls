@@ -191,8 +191,8 @@ brazil
 		\begin{center}
 		  \ABNTEXchapterfont\Large\MakeUppercase{\imprimirtitulo}
 		\end{center}
-		\noindent \textbf{Resumo:} \txtresumo
-		\par\noindent \textbf{Palavras chave:} \firstkey; \secondkey; \thirdkey; \fourthkey.
+		% \noindent \textbf{Resumo:} \txtresumo
+		% \par\noindent \textbf{Palavras chave:} \firstkey; \secondkey; \thirdkey; \fourthkey.
 		% ----------------------------------------------%
 		% SUMÁRIO
 		% ----------------------------------------------%

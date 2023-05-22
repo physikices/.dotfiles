@@ -48,4 +48,15 @@ return
 			),
 			{condition = tex.in_mathzone}
 				),
+		-- bra
+		s({trig = "([^%a])bra", wordTrig=false, regTrig = true, snippetType="autosnippet"},
+			fmta(
+				"<>|<>\\rangle",
+				{
+					f( function(_, snip) return snip.captures[1] end ),
+					d(1, get_visual),
+				}
+			),
+			{condition = tex.in_mathzone}
+				),
 }

@@ -293,7 +293,6 @@ return
 			{ condition = line_begin }
 		),
 		--
-		--
 		-- End Refactoring --
 }
 

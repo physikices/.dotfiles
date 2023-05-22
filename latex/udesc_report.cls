@@ -48,7 +48,7 @@ brazil
 \RequirePackage{pdfpages}
 \RequirePackage{setspace}
 \RequirePackage{lettrine}
-%\RequirePackage{GoudyIn}
+\RequirePackage{GoudyIn}
 \RequirePackage{wrapfig}
 %\RequirePackage{fancyhdr}
 \RequirePackage{amsthm}
