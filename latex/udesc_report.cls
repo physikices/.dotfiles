@@ -57,6 +57,7 @@ brazil
 %\RequirePackage{hyperref}
 \RequirePackage{cancel}
 %\RequirePackage{etoolbox}
+\RequirePackage{listofsymbols}
 \RequirePackage{breqn} %necessario para usar o ambiente 'dmath'
 \let\cancelorigcolor\CancelColor% Just for conveniency...
 
@@ -85,6 +86,7 @@ brazil
 	\RequirePackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
 	\RequirePackage[
 	alf,
+	% num,
 	%overcite,
 	versalete,
 	abnt-emphasize = bf,

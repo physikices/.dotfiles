@@ -116,7 +116,7 @@ m("n", "<leader>vo", "<cmd> Telescope oldfiles <CR>") --"	find oldfiles"
 m("n", "<leader>vc", "<cmd> Telescope git_commits <CR>") --"	git commits"
 m("n", "<leader>vs", "<cmd> Telescope git_status <CR>") --"  git status"
 m("n", "<leader>vt", "<cmd> Telescope terms <CR>") --"	pick hidden term"
-m("n", "<leader>mf", "<cmd> Telescope media_files <CR>") --"	pick hidden term"
+m("n", "<leader>mf", "<cmd> Telescope media_files <CR>") --"	media files"
 
 -- packer
 m("n", "<leader>p", function()

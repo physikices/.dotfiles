@@ -51,9 +51,11 @@ bindsym $mod+Shift+d exec --no-startup-id rofi -show run -theme Monokai
 # Launch Polybar. Take a look at ~/.confi/polybar/config to
 # configure the bar.
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id polybar example -r
 
 # Display Wallpaper, always.
-exec_always feh --bg-fill $HOME/Imagens/wallpapers/theme_2.jpg
+# exec_always feh --bg-fill $HOME/Imagens/wallpapers/theme_2.jpg
+exec_always feh --bg-fill $HOME/.dotfiles/wallpapers/1449203821767.jpg
 
 # Provide Gaps to Windows. Increase/Decrease as you like.
 gaps inner 10
@@ -262,7 +264,7 @@ gaps outer 0
 
 ##cores das bordas##
 # class                 border  backgr. text    indicator child_border
-client.focused          #46ce6b #46ce6b #46ce6b #46ce6b   #46ce6b
+client.focused          #46ce6b #1e1e2e #46ce6b #46ce6b   #1e1e2e
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
