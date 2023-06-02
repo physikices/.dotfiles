@@ -56,6 +56,7 @@ brazil
 \RequirePackage{cancel}
 %\RequirePackage{etoolbox}
 \let\cancelorigcolor\CancelColor% Just for conveniency...
+\RequirePackage{bbold}
 
 \newcommand{\CancelTo}[3][]{%
   \ifblank{#1}{}{%

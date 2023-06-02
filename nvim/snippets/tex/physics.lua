@@ -47,9 +47,10 @@ return
 				}
 			),
 			{condition = tex.in_mathzone}
-				),
-		-- bra
-		s({trig = "([^%a])bra", wordTrig=false, regTrig = true, snippetType="autosnippet"},
+		),
+
+		-- ket
+		s({trig = "([^%a])ket", wordTrig=false, regTrig = true, snippetType="autosnippet"},
 			fmta(
 				"<>|<>\\rangle",
 				{
@@ -58,5 +59,17 @@ return
 				}
 			),
 			{condition = tex.in_mathzone}
-				),
+		),
+
+		-- bra
+		s({trig = "([^%a])bra", wordTrig=false, regTrig = true, snippetType="autosnippet"},
+			fmta(
+				"\\langle <>|<>",
+				{
+					f( function(_, snip) return snip.captures[1] end ),
+					d(1, get_visual),
+				}
+			),
+			{condition = tex.in_mathzone}
+		),
 }
