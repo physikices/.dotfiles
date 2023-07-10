@@ -234,15 +234,15 @@ brazil
 	 \nolimits^{#1}\gobblespace
   }
   \def\gobblespace{%
-  \futurelet\diffarg\opspace}
+    \futurelet\diffarg\opspace}
   \def\opspace{%
-	 \let\DiffSpace\!%
-	 \ifx\diffarg(%
+		\let\DiffSpace\!%
+	  \ifx\diffarg(%
 		\let\DiffSpace\relax
-	 \else
+	  \else
 		\ifx\diffarg\[%
-			 \let\DiffSpace\relax
+			\let\DiffSpace\relax
 		  \else
-			 \ifx\diffarg\{%
-				  \let\DiffSpace\relax
-			 \fi\fi\fi\DiffSpace}
+			\ifx\diffarg\{%
+				\let\DiffSpace\relax
+				\fi\fi\fi\DiffSpace}
