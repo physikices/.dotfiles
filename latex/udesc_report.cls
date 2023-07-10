@@ -26,8 +26,9 @@ brazil
 \RequirePackage{amsmath,tikz,pgf}
 %\RequirePackage{mathpazo}
 %\RequirePackage[mathpazo]{flexisym}
+\usepackage{color, colortbl}
 
-%\RequirePackage{caption,subcaption}
+\RequirePackage{subcaption}
 \RequirePackage{soulutf8}
 \RequirePackage{csquotes}
 \RequirePackage[printonlyused,withpage]{acronym}
@@ -50,11 +51,11 @@ brazil
 \RequirePackage{lettrine}
 \RequirePackage{GoudyIn}
 \RequirePackage{wrapfig}
-%\RequirePackage{fancyhdr}
+\RequirePackage{fancyhdr}
 \RequirePackage{amsthm}
 \RequirePackage{physics}
 \RequirePackage{amssymb}
-%\RequirePackage{hyperref}
+\RequirePackage{hyperref}
 \RequirePackage{cancel}
 %\RequirePackage{etoolbox}
 \RequirePackage{listofsymbols}
@@ -70,6 +71,7 @@ brazil
 	\RequirePackage{manyfoot}
 	\DeclareNewFootnote{A}[fnsymbol]
 	\DeclareNewFootnote{B}[arabic]
+	\DeclareNewFootnote{C}[alph]
 	% -------------------------------
 	% para resolver o problema dos apostrofos e crases no listings
 	\RequirePackage{upquote,listings}
@@ -135,6 +137,10 @@ brazil
 		\else
 			Citado #1 vezes nas páginas #2.%
 	\fi}%
+	\def\figureautorefname{Fig.}
+	\def\tableautorefname{Tabela}
+	\def\appendixautorefname{Apêndice}
+	\def\chapterautorefname{Capítulo}
 	%-----------------------------------------------%
 	% Estilo de cabeçalho que só contém o número da 
 	% página e uma linha
@@ -142,7 +148,7 @@ brazil
 	\makepagestyle{cabecalholimpo}
 	\makeevenhead{cabecalholimpo}{\thepage}{}{} % páginas pares
 	\makeoddhead{cabecalholimpo}{}{}{\thepage} % páginas ímpares
-	%\makeheadrule{cabecalholimpo}{\textwidth}{\normalrulethickness} % linha
+	\makeheadrule{cabecalholimpo}{\textwidth}{\normalrulethickness} % linha
 	%-----------------------------------------------%
 	% GERA A CAPA 
 	%-----------------------------------------------%
@@ -190,16 +196,17 @@ brazil
 
 	\renewcommand{\folhaderostocontent}{
 	\begin{center}
-		\vspace*{3cm}
-		{\ABNTEXchapterfont\large\imprimirautor}
+		% \vspace*{3cm}
+		% {\ABNTEXchapterfont\large\imprimirautor}
 		\vfill
 		\begin{center}
-			\ABNTEXchapterfont\bfseries\Large\MakeUppercase{\imprimirtitulo}
+			% \ABNTEXchapterfont\bfseries\Large\MakeUppercase{\imprimirtitulo}
 		\end{center}
 
-		\vspace*{\fill}
+		% \vspace*{\fill}
 
 		\abntex@ifnotempty{\imprimirpreambulo}{%
+			\thispagestyle{empty}
 			\hspace{.45\textwidth}
 			\begin{minipage}{.5\textwidth}
 				\SingleSpacing
@@ -221,8 +228,8 @@ brazil
 
 		\vspace*{2cm}
 		{\large\imprimirlocal}
-		\par
-		{\large\imprimirdata}
+		% \par
+		% {\large\imprimirdata}
 		\vspace*{\fill}
 	\end{center}
 }

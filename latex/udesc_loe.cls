@@ -214,6 +214,7 @@ brazil
   {\end{xca}\noindent\rule{\textwidth}{1pt}}
   \newtheorem{sol}{Solução}
   \newtheorem{theorem}{Teorema}[section]
+  \newtheorem{propos}{Proposição}[section]
   \newtheorem{corollary}{Corolário}[theorem]
   \newtheorem{lemma}[theorem]{Lema}
   % ----------------------------------------------%
