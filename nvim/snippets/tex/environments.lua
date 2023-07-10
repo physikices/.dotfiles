@@ -66,7 +66,7 @@ return
 					i(1),
 					i(2),
 					d(3, get_visual),
-				rep(1),
+					rep(1),
 				}
 			),
 			{ condition = line_begin }
@@ -257,8 +257,8 @@ return
 				\begin{wrapfigure}[9]{<>}{0.5\textwidth}
 					\centering
 					\includegraphics[width=.45\textwidth]{assets/<>}
-					\label{fig:<>}
 					\caption{<>}
+					\label{fig:<>}
 				\end{wrapfigure}
 				]],
 				{

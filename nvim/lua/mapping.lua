@@ -6,6 +6,9 @@ local s = { silent = true }
 m('n', 'dw', 'vb"_d')
 -- New tab
 m('n', 'te', ':tabedit')
+m('n', 'tl', ':tabNext')
+m('n', 'th', ':tabprevious')
+m('n', 'tq', ':tabclose')
 -- Split window
 m('n', 'ss', ':split<Return><C-w>w')
 m('n', 'sv', ':vsplit<Return><C-w>w')

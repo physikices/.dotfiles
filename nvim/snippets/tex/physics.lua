@@ -1,6 +1,4 @@
-
 local ls = require("luasnip")
-
 -- some shorthands...
 local s = ls.snippet
 local sn = ls.snippet_node
@@ -37,39 +35,43 @@ tex.in_text = function() return not tex.in_mathzone() end
 -- Return snippet tables
 return
 	{
-		-- PLANCK CTE
-		s({trig = "([^%a])hb", wordTrig=false, regTrig = true, snippetType="autosnippet"},
+		-- CONSTANTE DE PLANCK
+		s({trig = '([^%a])hb', regTrig = true, wordTrig = false, snippetType="autosnippet"},
 			fmta(
 				"<>\\hbar<>",
 				{
 					f( function(_, snip) return snip.captures[1] end ),
-					d(1, get_visual),
+					d(1, get_visual)
 				}
 			),
 			{condition = tex.in_mathzone}
 		),
-
-		-- ket
-		s({trig = "([^%a])ket", wordTrig=false, regTrig = true, snippetType="autosnippet"},
+		--
+		-- KET
+		s({trig = '([^%a])ket', regTrig = true, wordTrig = false, snippetType="autosnippet"},
 			fmta(
-				"<>|<>\\rangle",
+				"<>|{<>}\\rangle",
 				{
 					f( function(_, snip) return snip.captures[1] end ),
-					d(1, get_visual),
+					d(1, get_visual)
 				}
 			),
 			{condition = tex.in_mathzone}
 		),
-
-		-- bra
-		s({trig = "([^%a])bra", wordTrig=false, regTrig = true, snippetType="autosnippet"},
+		--
+		-- BRA
+		s({trig = '([^%a])bra', regTrig = true, wordTrig = false, snippetType="autosnippet"},
 			fmta(
-				"\\langle <>|<>",
+				"<>\\langle{<>}|",
 				{
 					f( function(_, snip) return snip.captures[1] end ),
-					d(1, get_visual),
+					d(1, get_visual)
 				}
 			),
 			{condition = tex.in_mathzone}
 		),
-}
+		-- End Refactoring --
+	}
+
+
+
