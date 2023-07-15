@@ -142,6 +142,20 @@ use "Pocco81/true-zen.nvim" {
 use "mg979/vim-visual-multi" {}
 use "gcmt/wildfire.vim" {}
 use "tpope/vim-surround" {}
+
+-- chatBot
+use "jackMort/ChatGPT.nvim" {
+	require("chatgpt").setup({
+    api_key_cmd = "bw get notes chgpt",
+	}),
+	config = "configs.chgpt",
+	requires = {
+		"MunifTanjim/nui.nvim",
+	}
+}
+
+
+
 -- git
 use "TimUntersberger/neogit" {
 	cmd = "Neogit",
