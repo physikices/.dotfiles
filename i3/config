@@ -42,7 +42,9 @@ bindsym $mod+q kill
 # This is the recommended mode. It searches for the programs as
 # defined in .desktop file, with their description, and corresponding
 # icons
-bindsym $mod+d exec --no-startup-id rofi -show drun -theme Monokai -icon-theme "Tela-circle" -show-icons
+
+# bindsym $mod+d exec --no-startup-id rofi -show drun -theme Monokai -icon-theme "Tela-circle" -show-icons
+bindsym $mod+d exec --no-startup-id ~/.config/polybar/scripts/launcher.sh &
 
 # The other mode search for applications in /usr/bin or /usr/sbin.
 # This should only be used if a program lacks a .desktop file.
