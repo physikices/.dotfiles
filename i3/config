@@ -303,10 +303,16 @@ bindsym $mod+r mode "resize"
 # for_window [class="nameofapp"] move to workspace $wsno.
 # WS No. 5 has been used as example.
 # Note: You will have to launch the program from a program launcher (rofi).
-for_window [class="Brave-browser"] move to workspace $ws5
+for_window [class="kitty"] move to workspace $ws1
+for_window [class="MuPDF"] move to workspace $ws2
+for_window [class="okular"] move to workspace $ws2
+for_window [class="Brave-browser"] move to workspace $ws3
+for_window [class="Thunar"] move to workspace $ws4
+for_window [class="Spotify"] move to workspace $ws5
+for_window [class="Inkscape"] move to workspace $ws6
+for_window [class="Gimp"] move to workspace $ws7
 
 assign [class="Spotify"] $ws10
-for_window [class="Spotify"] move to workspace $ws10
 # The following way allows programs to be launched with a
 # defined keybinding, on a certain workspace, without
 # touching program launcher. Assign Programs to respective

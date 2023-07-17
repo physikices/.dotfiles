@@ -1,12 +1,7 @@
-#!/bin/bash
+#!/bin/env bash
 
-# see man zscroll for documentation of the following parameters
-zscroll -l 30 \
-        --delay 0.1 \
-        --scroll-padding "  " \
-        --match-command "`dirname $0`/get_spotify_status.sh --status" \
-        --match-text "Playing" "--scroll 1" \
-        --match-text "Paused" "--scroll 0" \
-        --update-check true "`dirname $0`/get_spotify_status.sh" &
+# zscroll -n false -u true -b "playing: " "./$HOME/.config/polybar/scripts/get_spotify_status.sh"
 
-wait
+$HOME/.config/polybar/scripts/get_spotify_status.sh
+
+# zscroll -l 5 -n false -u true -b "playing: " "/home/rodrigo/.config/polybar/scripts/get_spotify_status.sh" 
