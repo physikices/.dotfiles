@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-zscroll -l 30 \
+zscroll -l 30 \ 
 	  --delay 0.3 \
     --before-text "♪ x"\
 		--match-command "playerctl --player=playerctld status" \
