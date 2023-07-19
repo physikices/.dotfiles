@@ -143,7 +143,7 @@ use "mg979/vim-visual-multi" {}
 use "gcmt/wildfire.vim" {}
 use "tpope/vim-surround" {}
 
--- chatBot
+-- chatBots
 use "jackMort/ChatGPT.nvim" {
 	require("chatgpt").setup({
     api_key_cmd = "bw get notes chgpt",
@@ -153,6 +153,8 @@ use "jackMort/ChatGPT.nvim" {
 		"MunifTanjim/nui.nvim",
 	}
 }
+
+use "Exafunction/codeium.vim" {}
 
 
 

@@ -121,6 +121,12 @@ m("n", "<leader>vs", "<cmd> Telescope git_status <CR>") --"  git status"
 m("n", "<leader>vt", "<cmd> Telescope terms <CR>") --"	pick hidden term"
 m("n", "<leader>mf", "<cmd> Telescope media_files <CR>") --"	media files"
 
+-- codeium
+m("i", "<C-g>", "codeium#Accept()", { expr = true })
+m("i", "<C-;>", function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
+m("i", "<C-,>", function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
+m("i", "<C-x>", "codeium#Clear()", { expr = true })
+
 -- packer
 m("n", "<leader>p", function()
 	local present, packer = pcall(require, "packer")
