@@ -37,6 +37,7 @@ o.updatetime = 250
 
 o.pumheight = 15
 o.linebreak = true
+cmd.guicursor = ''
 
 o.encoding = "utf-8"
 vim.scriptencoding = "utf-8"

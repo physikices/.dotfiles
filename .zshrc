@@ -10,6 +10,7 @@ fi
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=/home/rodrigo/.local/bin:$PATH
 export PATH=$HOME/bin:/.config/lsp/lua-language-server/bin:$PATH
+export PATH=$HOME/.black-bin:$PATH
 
 
 # Diretórios TeXLive.
@@ -138,3 +139,6 @@ git-svn(){
           echo "Use: git-svn <repository> <subdirectory>"
   fi  
 }
+alias blkrun=${HOME}/.black-bin/run.sh
+# alias blkbuild=$HOME/.black-bin/build.sh
+alias blkplot=$HOME/.black-bin/grace.sh
