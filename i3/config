@@ -69,7 +69,7 @@ exec_always picom -f
 # can be customized to your liking.
 bindsym $mod+x exec betterlockscreen -l
 
-#  hutdown the computer
+# shutdown the computer
 #bindsym $mod+Shift+s exec shutdown now
 
 #Reboot Machine
@@ -272,9 +272,9 @@ gaps outer 0
 
 ##cores das bordas##
 # class                 border  backgr. text    indicator child_border
-client.focused          #1e1e2e #1e1e2e #46ce6b #9399b2   #1e1e2e
-client.focused_inactive #1e1e2e #1e1e2e	#ffffff #1e1e2e   #1e1e2e
-client.unfocused        #1e1e2e #1e1e2e #888888 #1e1e2e   #1e1e2e
+client.focused          #1e1e2e #1e1e2e #94E2DB #9399b2   #1e1e2e
+client.focused_inactive #1e1e2e #1e1e2e	#5B6579 #1e1e2e   #1e1e2e
+client.unfocused        #1e1e2e #1e1e2e #5B6579 #1e1e2e   #1e1e2e
 client.urgent           #1e1e2e #1e1e2e #ffffff #1e1e2e   #1e1e2e
 client.placeholder      #1e1e2e #1e1e2e #ffffff #1e1e2e   #1e1e2e
 
@@ -304,16 +304,15 @@ bindsym $mod+r mode "resize"
 # WS No. 5 has been used as example.
 # Note: You will have to launch the program from a program launcher (rofi).
 for_window [class="kitty"] move to workspace $ws1
-for_window [class="MuPDF"] move to workspace $ws2
 for_window [class="okular"] move to workspace $ws2
 for_window [class="Brave-browser"] move to workspace $ws3
 for_window [class="Thunar"] move to workspace $ws4
 for_window [class="Spotify"] move to workspace $ws5
+# assign [class="Spotify"] $ws10
 for_window [class="Inkscape"] move to workspace $ws6
 for_window [class="Gimp"] move to workspace $ws7
 for_window [class="XMgrace"] move to workspace $ws8
 
-assign [class="Spotify"] $ws10
 # The following way allows programs to be launched with a
 # defined keybinding, on a certain workspace, without
 # touching program launcher. Assign Programs to respective

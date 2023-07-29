@@ -30,7 +30,7 @@ require("luasnip.loaders.from_vscode").lazy_load() -- use it with: rafamadriz/fr
 require("luasnip.loaders.from_lua").lazy_load { paths = "./snippets/luasnip" }require("luasnip.loaders.from_vscode").lazy_load { paths = vim.fn.stdpath "config" .. ps .. "snippets" } -- load some custom snippets
 
 
-vim.keymap.set({ "i", "s" }, "<C-l>", function()
+vim.keymap.set({ "i", "s" }, "<C-a>", function()
 	if ls.choice_active() then
 		ls.change_choice(1)
 	else
@@ -40,8 +40,10 @@ vim.keymap.set({ "i", "s" }, "<C-l>", function()
 		print(time)
 	end
 end)
-vim.keymap.set({ "i", "s" }, "<C-h>", function()
+vim.keymap.set({ "i", "s" }, "<C-s>", function()
 	if ls.choice_active() then
 		ls.change_choice(-1)
 	end
 end)
+
+ -- selecting within a list of options.

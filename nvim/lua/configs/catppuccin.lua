@@ -16,6 +16,7 @@ catppuccin.setup {
 		markdown = true,
 		nvimtree = true,
 		neotest = true,
+		notify = true,
 		dap = {
 			enabled = true,
 			enable_ui = true,

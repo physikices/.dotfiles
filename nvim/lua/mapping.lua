@@ -25,6 +25,7 @@ m('n', '<leader>j', ':m.+1<CR>==', ns)
 m('n', '<leader>k', ':m.-2<CR>==', ns)
 -- m('i', '<leader>j', '<esc><cmd>m .+1<cr>==gi', ns)
 -- m('i', '<leader>k', '<esc><cmd>m .-2<cr>==gi', ns)
+--
 -- navigate within insert mode
 m("i", "<C-h>", "<Left>") -- "   move left"
 m("i", "<C-l>", "<Right>") -- " move right"
@@ -107,7 +108,7 @@ m("n","<leader>h", "<cmd>nohl<CR>", s)
 m('n','<leader>ta','<cmd>ToggleAlternate<CR>', s)
 
 -- telescope
-m("n", "<leader>vv", "<cmd> Telescope<CR>") -- "  find files"
+m("n", "<leader>vv", "<cmd> Telescope<CR>") -- "  telescope builtin"
 m("n", "<leader>vf", "<cmd> Telescope find_files <CR>") -- "  find files"
 m("n", "<leader>va", "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>") --"  find all"
 m("n", "<leader>vl", "<cmd> Telescope live_grep <CR>") --"	live grep"

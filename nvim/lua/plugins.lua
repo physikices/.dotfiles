@@ -159,10 +159,12 @@ use "Exafunction/codeium.vim" {}
 
 
 -- git
-use "TimUntersberger/neogit" {
-	cmd = "Neogit",
-	config = function() require("neogit").setup {} end,
-}
+
+-- use "TimUntersberger/neogit" {
+-- 	cmd = "Neogit",
+-- 	config = function() require("neogit").setup {} end,
+-- } -- quebrado em 27/08/2023
+
 use "lewis6991/gitsigns.nvim" {
 	--config = function() require "configs.gitsigns" end,
 	config = "configs.gitsigns",
@@ -187,6 +189,7 @@ use "nvim-telescope/telescope.nvim" {
 	},
 	config = "configs.telescope",
 }
+
 use "nvim-telescope/telescope-fzf-native.nvim" {
 	after = "telescope.nvim",
 	run = "make",
@@ -227,6 +230,14 @@ use "gpanders/editorconfig.nvim" {
 	event = "BufRead",
 }
 
+use "akinsho/toggleterm.nvim" {
+	tag = '*',
+	config = "configs.toggleterm",
+}
+
+use "lervag/vimtex" {
+	config = "configs.vimtex",
+}
 -- plugins em teste
 use "rmagatti/alternate-toggler"{
 	config = function ()
@@ -239,11 +250,26 @@ use "rmagatti/alternate-toggler"{
 	event = { "BufReadPost" },
 }
 
-use "akinsho/toggleterm.nvim" {
-	tag = '*',
-	config = "configs.toggleterm",
+use "rcarriga/nvim-notify" {
+	event = "BufEnter",
+	config = "configs.notify",
+	-- config = function()
+	-- 	vim.defer_fn(function()
+	-- 		require("configs.notify")
+	-- 	end, 2000)
+	-- end,
 }
 
-use "lervag/vimtex" {
-	config = "configs.vimtex",
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
