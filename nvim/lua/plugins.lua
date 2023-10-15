@@ -52,6 +52,7 @@ use "akinsho/bufferline.nvim" {
 
 use "lukas-reineke/indent-blankline.nvim" {
 	after = "catppuccin",
+	-- config = function () require("ibl").setup() end,
 	config = "configs.indent_blankline",
 }
 
