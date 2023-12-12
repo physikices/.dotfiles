@@ -29,25 +29,25 @@ cmp.setup {
 	sources = cmp.config.sources({
 		{ name = "luasnip",
 			entry_filter = function(entry)
-        return require("cmp").lsp.CompletionItemKind.Text ~= entry:get_kind()
-      end
+				return require("cmp").lsp.CompletionItemKind.Text ~= entry:get_kind()
+			end
 		},
 		{ name = "nvim_lsp",
 			entry_filter = function (entry)
 				return require("cmp.types").lsp.CompletionItemKind[entry:get_kind()] ~= 'Text'
 			end
 		},
-	 },{
-		{ name = "buffer" },
-	 },{
-		{ name = "path" },
-	 }),
-		--{ name = "treesitter" },
-		--{ name = "nvim_lua" },
-		--{ name = "spell" },
-		--{ name = "emoji" },
-		--{ name = "calc" },
-      --{ name = "cmdline" },
+		},{
+			{ name = "buffer" },
+		},{
+			{ name = "path" },
+	}),
+	--{ name = "treesitter" },
+	--{ name = "nvim_lua" },
+	--{ name = "spell" },
+	--{ name = "emoji" },
+	--{ name = "calc" },
+	--{ name = "cmdline" },
 	formatting = {
 		format = function(entry, vim_item)
 			local icons = {
@@ -76,6 +76,7 @@ cmp.setup {
 				Event = "",
 				Operator = "",
 				TypeParameter = " ",
+				symbol_map = { Codeium = "", }
 			}
 			-- vim_item.kind = require "lspkind".symbol_map[vim_item.kind]
 			vim_item.kind = string.format("%s %s", icons[vim_item.kind], vim_item.kind)
@@ -91,9 +92,9 @@ cmp.setup {
 				--calc = "[clc]",
 				--cmdline = "[cmd]",
 			})[entry.source.name]
-		  if vim_item.source == "luasnip" or vim_item.source == "nvim_lsp" then
-		  	vim_item.dup = 0
-		  end
+			if vim_item.source == "luasnip" or vim_item.source == "nvim_lsp" then
+				vim_item.dup = 0
+			end
 			return vim_item
 		end,
 	},
@@ -123,11 +124,25 @@ cmp.setup {
 			select = false,
 		},
 		["<Tab>"] = cmp.mapping(function(fallback)
-			if cmp.visible() then
-				cmp.select_next_item()
-			elseif require("luasnip").expand_or_jumpable() then
-				require("luasnip").expand_or_jump()
+			-- if cmp.visible() then
+			-- 	cmp.select_next_item()
+			-- elseif require("luasnip").expand_or_jumpable() then
+			-- 	require("luasnip").expand_or_jump()
+			-- elseif has_words_before() then
+			-- 	cmp.complete()
+			-- else
+			if cmp.visible() and cmp.get_active_entry() then
+				-- completion if a cmp item is selected
+				cmp.confirm({ select = false, behavior = cmp.ConfirmBehavior.Replace })
+			elseif vim.fn.exists('b:_codeium_completions') ~= 0 then
+				-- accept codeium completion if visible
+				vim.fn['codeium#Accept']()
+				fallback()
+			elseif cmp.visible() then
+				-- select first item if visible
+				cmp.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace })
 			elseif has_words_before() then
+				-- show autocomplete
 				cmp.complete()
 			else
 				fallback()

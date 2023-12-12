@@ -45,5 +45,3 @@ table.insert(snippets, mySecondSnippet)
 
 -- End Refactoring --
 return snippets, autosnippets
-
-

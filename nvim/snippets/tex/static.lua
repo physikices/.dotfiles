@@ -58,42 +58,42 @@ return
 				t("\\qquad "),
 			}
 		),
-		s({trig="npp", snippetType="autosnippet"},
-			{
-				t({"\\newpage", ""}),
-			},
-			{condition = line_begin}
-		),
-		s({trig="which", snippetType="autosnippet"},
-			{
-				t("\\text{ for which } "),
-			},
-			{condition = tex.in_mathzone}
-		),
-		s({trig="all", snippetType="autosnippet"},
-			{
-				t("\\text{ for all } "),
-			},
-			{condition = tex.in_mathzone}
-		),
-		s({trig="and", snippetType="autosnippet"},
-			{
-				t("\\quad \\text{and} \\quad"),
-			},
-			{condition = tex.in_mathzone}
-		),
-		s({trig="forall", snippetType="autosnippet"},
-			{
-				t("\\text{ for all } "),
-			},
-			{condition = tex.in_mathzone}
-		),
-		s({trig = "toc", snippetType="autosnippet"},
-			{
-				t("\\tableofcontents"),
-			},
-			{ condition = line_begin }
-		),
+		-- s({trig="npp", snippetType="autosnippet"},
+		-- 	{
+		-- 		t({"\\newpage", ""}),
+		-- 	},
+		-- 	{condition = line_begin}
+		-- ),
+		-- s({trig="which", snippetType="autosnippet"},
+		-- 	{
+		-- 		t("\\text{ for which } "),
+		-- 	},
+		-- 	{condition = tex.in_mathzone}
+		-- ),
+		-- s({trig="all", snippetType="autosnippet"},
+		-- 	{
+		-- 		t("\\text{ for all } "),
+		-- 	},
+		-- 	{condition = tex.in_mathzone}
+		-- ),
+		-- s({trig="and", snippetType="autosnippet"},
+		-- 	{
+		-- 		t("\\quad \\text{and} \\quad"),
+		-- 	},
+		-- 	{condition = tex.in_mathzone}
+		-- ),
+		-- s({trig="forall", snippetType="autosnippet"},
+		-- 	{
+		-- 		t("\\text{ for all } "),
+		-- 	},
+		-- 	{condition = tex.in_mathzone}
+		-- ),
+		-- s({trig = "toc", snippetType="autosnippet"},
+		-- 	{
+		-- 		t("\\tableofcontents"),
+		-- 	},
+		-- 	{ condition = line_begin }
+		-- ),
 		s({trig="inff", snippetType="autosnippet"},
 			{
 				t("\\infty"),

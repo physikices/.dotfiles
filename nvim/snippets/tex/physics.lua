@@ -85,6 +85,3 @@ return
 		--
 		-- End Refactoring --
 	}
-
-
-

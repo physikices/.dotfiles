@@ -280,9 +280,10 @@ client.placeholder      #1e1e2e #1e1e2e #ffffff #1e1e2e   #1e1e2e
 
 ##Configurações de Usuário##
 # scrot & gimp - root
-bindsym Print exec deepin-screenshot
+bindsym Print exec deepin-screen-recorder
 # scrot & gimp - select window or rectangle
-bindsym Mod1+Print exec scrot -s -e 'mv $f /tmp/ && gimp /tmp/$f'
+# bindsym Print exec scrot -s -e 'xclip -selection clipboard -t "image/png" < $f'
+# bindsym $mod+p exec scrot -s -e 'mv $f /tmp/ && gimp /tmp/$f'
 
 
 # 13B] Enter Resize Mode

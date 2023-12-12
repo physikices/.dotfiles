@@ -86,8 +86,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		bufmap('x', '<F4>', '<cmd>lua vim.lsp.buf.range_code_action()<cr>')
 		-- Mostrar diagnósticos de la línea actual
 		bufmap('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>')
-		-- Saltar al diagnóstico anterior
 		bufmap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
+		-- Saltar al diagnóstico anterior
 		-- Saltar al siguiente diagnóstico
 		bufmap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>')
 		-- Telescop/LSP referencias

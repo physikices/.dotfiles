@@ -87,8 +87,11 @@ use "neovim/nvim-lspconfig" {
 		"b0o/schemastore.nvim",
 	},
 }
-use "glepnir/lspsaga.nvim" {
+use "nvimdev/lspsaga.nvim" {
 	after = "nvim-lspconfig",
+	 -- config = function()
+  --       require('lspsaga').setup({})
+  --   end,
 	config = "configs.lsp.saga",
 }
 
@@ -123,7 +126,7 @@ use "windwp/nvim-autopairs" {
 	config = function()
 		require("nvim-autopairs").setup()
 		require("cmp").event:on("confirm_done",
-			require("nvim-autopairs.completion.cmp").on_confirm_done())
+		require("nvim-autopairs.completion.cmp").on_confirm_done())
 	end,
 }
 
@@ -145,17 +148,23 @@ use "gcmt/wildfire.vim" {}
 use "tpope/vim-surround" {}
 
 -- chatBots
-use "jackMort/ChatGPT.nvim" {
-	require("chatgpt").setup({
-    api_key_cmd = "bw get notes chgpt",
-	}),
-	config = "configs.chgpt",
-	requires = {
-		"MunifTanjim/nui.nvim",
-	}
-}
+-- use "jackMort/ChatGPT.nvim" {
+-- 	require("chatgpt").setup({
+--     api_key_cmd = "bw get notes chgpt",
+-- 	}),
+-- 	config = "configs.chgpt",
+-- 	requires = {
+-- 		"MunifTanjim/nui.nvim",
+-- 	}
+-- }
 
-use "Exafunction/codeium.vim" {}
+use "Exafunction/codeium.vim" {
+	dependencies = {
+        "nvim-lua/plenary.nvim",
+        "hrsh7th/nvim-cmp",
+    },
+	config = "configs.codeium",
+}
 
 
 

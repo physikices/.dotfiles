@@ -1,4 +1,5 @@
-#!/bin/bash
+#! /bin/bash
+
 trap "trap - SIGTERM && kill -- -$$" SIGINT SIGTERM EXIT
 
 bar="▁▂▃▄▅▆▇█"
@@ -23,7 +24,7 @@ mkfifo $pipe
 config_file="/tmp/polybar_cava_config"
 echo "
 [general]
-bars = 15
+bars = 10
 
 [output]
 method = raw

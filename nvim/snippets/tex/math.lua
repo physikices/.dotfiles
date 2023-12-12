@@ -71,7 +71,7 @@ return
 		),
 		-- TEXT SUBSCRIPT 
 		s({trig = 'sd', snippetType="autosnippet", wordTrig=false},
-			fmta("_{\\mathrm{<>}}",
+			fmta("\\mathrm{<>}",
 				{ d(1, get_visual) }
 			),
 			{condition = tex.in_mathzone}
@@ -191,7 +191,7 @@ return
 		-- DEFAULT UNIT VECTOR WITH SUBSCRIPT, i.e. \unitvector_{} (IMPLENTAR)
 		s({trig = "([^%a])ue", wordTrig = false, regTrig = true, snippetType="autosnippet"},
 			fmta(
-				"<>\\vu*{<>}_{<>}",
+				"<>\\vu{<>}_{<>}",
 				{
 					f( function(_, snip) return snip.captures[1] end ),
 					d(1, get_visual),

@@ -32,7 +32,6 @@ require("mason-tool-installer").setup {
 		"stylua",
 		"prettier",
 		"prettierd",
-
 		-- linters
 		-- "ltex-ls",
 		"texlab",

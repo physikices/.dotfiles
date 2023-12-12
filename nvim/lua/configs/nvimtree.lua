@@ -16,7 +16,7 @@ nvimtree.setup {
 	view = {
 		width = 25,
 		side = "left",
-		hide_root_folder = false,
+		-- hide_root_folder = false, --> deprecated
 	},
 	git = {
 		enable = false,
@@ -28,6 +28,7 @@ nvimtree.setup {
 		},
 	},
 	renderer = {
+		root_folder_label = true,
 		indent_markers = {
 			enable = true,
 			icons = {

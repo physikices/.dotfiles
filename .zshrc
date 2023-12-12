@@ -95,7 +95,7 @@ plugins=(git zsh-syntax-highlighting zsh-autosuggestions web-search)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
