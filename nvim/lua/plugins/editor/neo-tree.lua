@@ -15,9 +15,9 @@ return {
     require("neo-tree").setup({
       filesystem = {
         filtered_items = {
-          visible = true, -- This is what you want: If you set this to `true`, all "hide" just mean "dimmed out"
-          hide_dotfiles = false,
-          hide_gitignored = false,
+          -- visible = true, -- This is what you want: If you set this to `true`, all "hide" just mean "dimmed out"
+          hide_dotfiles = true,
+          hide_gitignored = true,
         }
       },
       git_status = {
@@ -31,16 +31,32 @@ return {
           unstaged = icons.git.FileUnstaged,
           staged = icons.git.FileStaged,
           conflict = icons.git.FileConflict
-        }
+        },
+        icon = {
+          folder_closed = icons.ui.Folder,
+          folder_open = icons.ui.FolderOpen,
+          folder_empty = icons.ui.EmptyFolderOpen,
+          default = icons.ui.File,
+          highlight = "NeoTreeFileIcon"
+        },
+        modified = {
+          symbol = icons.ui.NewFile,
+          highlight = "NeoTreeModified",
+        },
+        name = {
+          trailing_slash = false,
+          use_git_status_colors = true,
+          highlight = "NeoTreeFileName",
+        },
       }
     })
     vim.fn.sign_define("DiagnosticSignError",
-      {text = " ", texthl = "DiagnosticSignError"})
+      {text = icons.diagnostics.Error, texthl = "DiagnosticSignError"})
     vim.fn.sign_define("DiagnosticSignWarn",
-      {text = " ", texthl = "DiagnosticSignWarn"})
+      {text = icons.diagnostics.Warning, texthl = "DiagnosticSignWarn"})
     vim.fn.sign_define("DiagnosticSignInfo",
-      {text = " ", texthl = "DiagnosticSignInfo"})
+      {text = icons.diagnostics.Information, texthl = "DiagnosticSignInfo"})
     vim.fn.sign_define("DiagnosticSignHint",
-      {text = "󰌵", texthl = "DiagnosticSignHint"})
+      {text = icons.diagnostics.Hint, texthl = "DiagnosticSignHint"})
   end
 }
