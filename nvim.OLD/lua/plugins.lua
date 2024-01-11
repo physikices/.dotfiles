@@ -89,9 +89,9 @@ use "neovim/nvim-lspconfig" {
 }
 use "nvimdev/lspsaga.nvim" {
 	after = "nvim-lspconfig",
-	 -- config = function()
-  --       require('lspsaga').setup({})
-  --   end,
+	-- config = function()
+	--       require('lspsaga').setup({})
+	--   end,
 	config = "configs.lsp.saga",
 }
 
@@ -126,7 +126,7 @@ use "windwp/nvim-autopairs" {
 	config = function()
 		require("nvim-autopairs").setup()
 		require("cmp").event:on("confirm_done",
-		require("nvim-autopairs.completion.cmp").on_confirm_done())
+			require("nvim-autopairs.completion.cmp").on_confirm_done())
 	end,
 }
 
@@ -147,33 +147,14 @@ use "mg979/vim-visual-multi" {}
 use "gcmt/wildfire.vim" {}
 use "tpope/vim-surround" {}
 
--- chatBots
--- use "jackMort/ChatGPT.nvim" {
--- 	require("chatgpt").setup({
---     api_key_cmd = "bw get notes chgpt",
--- 	}),
--- 	config = "configs.chgpt",
--- 	requires = {
--- 		"MunifTanjim/nui.nvim",
--- 	}
--- }
-
 use "Exafunction/codeium.vim" {
 	dependencies = {
-        "nvim-lua/plenary.nvim",
-        "hrsh7th/nvim-cmp",
-    },
+		"nvim-lua/plenary.nvim",
+		"hrsh7th/nvim-cmp",
+	},
 	config = "configs.codeium",
 }
 
-
-
--- git
-
--- use "TimUntersberger/neogit" {
--- 	cmd = "Neogit",
--- 	config = function() require("neogit").setup {} end,
--- } -- quebrado em 27/08/2023
 
 use "lewis6991/gitsigns.nvim" {
 	--config = function() require "configs.gitsigns" end,
@@ -268,6 +249,14 @@ use "rcarriga/nvim-notify" {
 	-- 		require("configs.notify")
 	-- 	end, 2000)
 	-- end,
+}
+
+"Jezda1337/nvim-html-css"{
+	dependencies = {
+		"nvim-treesitter/nvim-treesitter",
+		"nvim-lua/plenary.nvim",
+	},
+	config = "configs.html-css",
 }
 
 

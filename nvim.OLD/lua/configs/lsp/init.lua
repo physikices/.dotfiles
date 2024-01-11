@@ -51,6 +51,7 @@ mason_lspconfig.setup {
 		"texlab",
 		"tsserver",
 		"jsonls",
+		-- "volar",
 	},
 	automatic_installation = true,
 }
@@ -200,6 +201,16 @@ mason_lspconfig.setup_handlers {
 			},
 			root_dir = require "lspconfig/util".root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
 		})
-	end
+	end,
+
+	-- ["volar"] = function ()
+	-- 	lsp.volar.setup({
+	-- 		filetypes = {
+	-- 			"typescript",
+	-- 			"javascript",
+	-- 			"javascriptreact",
+	-- 		}
+	-- 	})
+	-- end
 }
 
