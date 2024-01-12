@@ -16,19 +16,27 @@ return {
     delete_check_events = "TextChanged",
     enable_autosnippets = true,
     store_selection_keys = "<Tab>",
+    ext_opts = {
+      [require("luasnip.util.types").choiceNode] = {
+        active = {
+          virt_text = { { "  <C-l>/<C-s>", "DiagnosticHint" } },
+        },
+      },
+    },
   },
   -- stylua: ignore
   keys = {
     {
-      "<tab>",
+      "<Tab>",
       function()
         return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>"
       end,
       expr = true, silent = true, mode = "i",
     },
-    { "<tab>", function() require("luasnip").jump(1) end, mode = "s" },
-    { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
-    { "<C-n>", function() require("luasnip").change_choice(1) end, mode = { "i", "s" } },
-    { "<C-p>", function() require("luasnip").change_choice(-1) end, mode = { "i", "s" } },
+
+    { "<Tab>", function() require("luasnip").jump(1) end, mode = "s" },
+    { "<s-Tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
+    { "<C-l>", function() require("luasnip").change_choice(1) end, mode = { "i", "s" } },
+    { "<C-s>", function() require("luasnip").change_choice(-1) end, mode = { "i", "s" } },
   },
 }

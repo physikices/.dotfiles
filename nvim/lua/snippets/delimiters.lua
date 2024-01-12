@@ -30,6 +30,7 @@ end
 
 -- Return snippet tables
 return {
+
   ls.add_snippets("tex", {
     -- LEFT/RIGHT PARENTHESES
     s(

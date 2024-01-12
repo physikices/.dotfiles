@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 require("user-options")
 require("user-mappings")
 require("user-icons")
+require("user-autocmds")
 
 require("lazy").setup({
   { import = "plugins" },
