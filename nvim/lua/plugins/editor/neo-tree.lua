@@ -22,9 +22,9 @@ return {
       },
       git_status = {
         symbols = {
-          added = icons.git.LineAdded,
-          modified = icons.git.LineModified,
-          deleted = icons.git.LineRemoved,
+          added = icons.git.FileUntracked,
+          modified = icons.git.FileUnstaged,
+          deleted = icons.git.FileDeletedRemoved,
           renamed = icons.git.FileRenamed,
           untracked = icons.git.FileUntracked,
           ignored = icons.git.FileIgnored,
