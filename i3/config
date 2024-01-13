@@ -43,8 +43,8 @@ bindsym $mod+q kill
 # defined in .desktop file, with their description, and corresponding
 # icons
 
-# bindsym $mod+d exec --no-startup-id rofi -show drun -theme Monokai -icon-theme "Tela-circle" -show-icons
-bindsym $mod+d exec --no-startup-id ~/.config/polybar/scripts/launcher.sh &
+bindsym $mod+d exec --no-startup-id rofi -show drun
+# bindsym $mod+d exec --no-startup-id ~/.config/polybar/scripts/launcher.sh &
 
 # The other mode search for applications in /usr/bin or /usr/sbin.
 # This should only be used if a program lacks a .desktop file.
@@ -57,7 +57,7 @@ exec --no-startup-id polybar example -r
 
 # Display Wallpaper, always.
 # exec_always feh --bg-fill $HOME/Imagens/wallpapers/theme_2.jpg
-exec_always feh --bg-fill $HOME/.dotfiles/wallpapers/1449203821767.jpg
+exec_always feh --bg-fill $HOME/.dotfiles/wallpapers/mountain.jpg
 
 # Provide Gaps to Windows. Increase/Decrease as you like.
 gaps inner 10
