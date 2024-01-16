@@ -45,11 +45,13 @@ return {
         \begin{<>}
           <>
         \end{<>}
+        <>
         ]],
         {
           i(1),
           d(2, get_visual),
           rep(1),
+          i(0)
         }
       ),
       { condition = line_begin }
@@ -65,12 +67,14 @@ return {
         \begin{<>}{<>}
           <>
         \end{<>}
+        <>
         ]],
         {
           i(1),
           i(2),
           d(3, get_visual),
           rep(1),
+          i(0)
         }
       ),
       { condition = line_begin }
@@ -86,6 +90,7 @@ return {
         \begin{<>}{<>}{<>}
           <>
         \end{<>}
+        <>
         ]],
         {
           i(1),
@@ -93,6 +98,7 @@ return {
           i(3),
           d(4, get_visual),
           rep(1),
+          i(0),
         }
       ),
       { condition = line_begin }
@@ -108,9 +114,11 @@ return {
         \begin{equation*}
           <>
         \end{equation*}
+        <>
         ]],
         {
           i(1),
+          i(0),
         }
       ),
       { condition = line_begin }
@@ -128,9 +136,11 @@ return {
             <>
           \end{split}
         \end{equation*}
+        <>
         ]],
         {
           d(1, get_visual),
+          i(0)
         }
       ),
       { condition = line_begin }
@@ -146,9 +156,11 @@ return {
         \begin{align*}
           <>
         \end{align*}
+        <>
         ]],
         {
           i(1),
+          i(0)
         }
       ),
       { condition = line_begin }
@@ -164,9 +176,11 @@ return {
         \begin{itemize}
           \item <>
         \end{itemize}
+        <>
         ]],
         {
-          i(0),
+          i(1),
+          i(0)
         }
       ),
       { condition = line_begin }
@@ -182,9 +196,11 @@ return {
         \begin{enumerate}
           \item <>
         \end{enumerate}
+        <>
         ]],
         {
-          i(0),
+          i(1),
+          i(0)
         }
       ),
       { condition = line_begin }
@@ -218,12 +234,14 @@ return {
           \caption{<>}
           \label{fig:<>}
         \end{figure}
+        <>
         ]],
         {
           i(1),
           i(2),
           i(3),
           i(4),
+          i(0)
         }
       ),
       { condition = line_begin }
@@ -242,12 +260,14 @@ return {
             <>\label{eq:<>}
           \end{align}
         \end{subequations}
+        <>
         ]],
         {
           i(1),
           i(2),
           i(3),
-          d(4, get_visual),
+          i(4),
+          i(0),
         }
       ),
       { condition = line_begin }
@@ -263,11 +283,13 @@ return {
         \begin{dmath*}
           <>\condition{<> $\displaystyle{<>}$}
         \end{dmath*}
+        <>
         ]],
         {
           i(1),
           i(2),
           i(3),
+          i(0)
         }
       ),
       { condition = line_begin }
@@ -286,12 +308,14 @@ return {
           \caption{<>}
           \label{fig:<>}
         \end{wrapfigure}
+        <>
         ]],
         {
           c(1,{t("r"),t("l")}),
           i(2),
           i(3),
           i(4),
+          i(0)
         }
       ),
       { condition = line_begin }
@@ -311,6 +335,7 @@ return {
             <>, &\text{se $<>$}\\
           \end{cases}
         \end{eqnarray*}
+        <>
         ]],
         {
           i(1),
@@ -318,6 +343,7 @@ return {
           i(3),
           i(4),
           i(5),
+          i(0)
         }
       ),
       { condition = line_begin }
