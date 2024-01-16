@@ -22,3 +22,12 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
   end,
 })
+
+-- vimtex
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  group = vim.api.nvim_create_augroup("lazyvim_vimtex_conceal", { clear = true }),
+  pattern = { "bib", "tex" },
+  callback = function()
+    vim.wo.conceallevel = 0 -- put 2 to activate it
+  end,
+})

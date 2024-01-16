@@ -142,7 +142,7 @@ return {
           f(function(_, snip)
             return snip.captures[1]
           end),
-          f(function(_, snip) 
+          f(function(_, snip)
             return snip.captures[2]
           end),
         }
@@ -293,8 +293,8 @@ return {
       fmta(
         "<>\\vec{<>}",
         {
-          f(function(_, snip) return 
-            snip.captures[1] 
+          f(function(_, snip) return
+            snip.captures[1]
           end),
           d(1, get_visual),
         }
@@ -310,7 +310,7 @@ return {
         snippetType="autosnippet"
       },
       fmta(
-        "<>\\unitvector_{<>}",
+        "<>\\vu{e}_{<>}",
         {
           f(function(_, snip)
             return snip.captures[1]
@@ -329,7 +329,7 @@ return {
         snippetType="autosnippet"
       },
       fmta(
-        "<>\\uvec{<>}",
+        "<>\\vu*{<>}",
         {
           f(function(_, snip) return
             snip.captures[1]
@@ -339,18 +339,18 @@ return {
       ),
       { condition = tex.in_mathzone }
     ),
-    -- MATRIX, i.e. \vec
+    -- VECTOR BOLD
     s(
       {
-        trig = "([^%a])mt",
+        trig = "([^%a])vb",
         wordTrig = false,
         regTrig = true,
         snippetType="autosnippet"
       },
       fmta(
-        "<>\\mat{<>}",
+        "<>\\vb{<>}",
         {
-          f(function(_, snip) 
+          f(function(_, snip)
             return snip.captures[1]
           end),
           d(1, get_visual),
@@ -374,25 +374,6 @@ return {
           end),
           d(1, get_visual),
           i(2),
-        }
-      ),
-      { condition = tex.in_mathzone }
-    ),
-    -- ANGLE
-    s(
-      {
-        trig = "([^%a])gg",
-        regTrig = true,
-        wordTrig = false,
-        snippetType="autosnippet"
-      },
-      fmta(
-        "<>\\ang{<>}",
-        {
-          f(function(_, snip)
-            return snip.captures[1]
-          end),
-          d(1, get_visual),
         }
       ),
       { condition = tex.in_mathzone }
@@ -483,7 +464,7 @@ return {
         snippetType="autosnippet"
       },
       fmta(
-        "<>\\dvOne{<>}",
+        "<>\\dv{<>}",
         {
           f(function(_, snip) return
             snip.captures[1]
@@ -504,7 +485,7 @@ return {
       fmta(
         "<>\\dv{<>}{<>}",
         {
-          f(function(_, snip) 
+          f(function(_, snip)
             return snip.captures[1]
           end),
           i(1),
@@ -522,7 +503,7 @@ return {
         snippetType="autosnippet"
       },
       fmta(
-        "<>\\dvN{<>}{<>}{<>}",
+        "<>\\dv[<>]{<>}{<>}",
         {
           f(function(_, snip)
             return snip.captures[1]
@@ -543,9 +524,9 @@ return {
         snippetType="autosnippet"
       },
       fmta(
-        "<>\\pdvOne{<>}",
+        "<>\\pdv{<>}",
         {
-          f(function(_, snip) 
+          f(function(_, snip)
             return snip.captures[1]
           end),
           d(1, get_visual),
@@ -582,7 +563,7 @@ return {
         snippetType="autosnippet"
       },
       fmta(
-        "<>\\pdvN{<>}{<>}{<>}",
+        "<>\\pdv[<>]{<>}{<>}",
         {
           f(function(_, snip)
             return snip.captures[1]
@@ -597,7 +578,7 @@ return {
     -- SUM with lower limit
     s(
       {
-        trig = "([^%a])sM", 
+        trig = "([^%a])sM",
         wordTrig = false,
         regTrig = true,
         snippetType="autosnippet"
@@ -642,13 +623,15 @@ return {
         snippetType="autosnippet"
       },
       fmta(
-        "<>\\int_{<>}^{<>}",
+        "<>\\int\\limits_{<>}^{<>} <>\\dd{<>}",
         {
           f(function(_, snip)
             return snip.captures[1]
           end),
           i(1),
           i(2),
+          i(3),
+          i(4),
         }
       ),
       { condition = tex.in_mathzone }
@@ -662,11 +645,13 @@ return {
         snippetType="autosnippet"
       },
       fmta(
-        "<>\\int_{\\infty}^{\\infty}",
+        "<>\\int\\limits_{-\\infty}^{\\infty} <>\\dd{<>}",
         {
           f(function(_, snip)
             return snip.captures[1]
           end),
+          i(1),
+          i(2),
         }
       ),
       { condition = tex.in_mathzone }
@@ -700,10 +685,9 @@ return {
         trig = "df",
         snippetType="autosnippet",
         priority=2000,
-        snippetType="autosnippet"
       },
       {
-        t("\\diff"),
+        t("\\dd"),
       },
       { condition = tex.in_mathzone }
     ),
@@ -748,17 +732,6 @@ return {
       },
       {
         t("\\oint"),
-      },
-      { condition = tex.in_mathzone }
-    ),
-    -- CLOSED DOUBLE INTEGRAL, i.e. \oiint
-    s(
-      {
-        trig = "oi2",
-        snippetType="autosnippet"
-      },
-      {
-        t("\\oiint"),
       },
       { condition = tex.in_mathzone }
     ),
@@ -829,7 +802,7 @@ return {
     -- LDOTS, i.e. \ldots
     s(
       {
-        trig = "ldd", 
+        trig = "ldd",
         snippetType="autosnippet"
       },
       {
@@ -844,26 +817,6 @@ return {
       },
       {
         t("\\equiv "),
-      }
-    ),
-    -- SETMINUS, i.e. \setminus
-    s(
-      {
-        trig = "stm",
-        snippetType="autosnippet"
-      },
-      {
-        t("\\setminus "),
-      }
-    ),
-    -- SUBSET, i.e. \subset
-    s(
-      {
-        trig = "sbb",
-        snippetType="autosnippet"
-      },
-      {
-        t("\\subset "),
       }
     ),
     -- APPROX, i.e. \approx
@@ -888,16 +841,6 @@ return {
       },
       { condition = tex.in_mathzone }
     ),
-    -- COLON, i.e. \colon
-    s(
-      {
-        trig = "::",
-        snippetType="autosnippet"
-      },
-      {
-        t("\\colon "),
-      }
-    ),
     -- IMPLIES, i.e. \implies
     s(
       {
@@ -911,11 +854,11 @@ return {
     -- DOT PRODUCT, i.e. \cdot
     s(
       {
-        trig = ",.", 
+        trig = ",.",
         snippetType="autosnippet"
       },
       {
-        t("\\cdot "),
+        t("\\vdot "),
       }
     ),
     -- CROSS PRODUCT, i.e. \times
@@ -925,7 +868,7 @@ return {
         snippetType="autosnippet"
       },
       {
-        t("\\times "),
+        t("\\cp "),
       }
     ),
   }),

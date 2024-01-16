@@ -1,10 +1,12 @@
 return {
   "lervag/vimtex",
-  ft = "tex",
+
+  lazy = true,
+  ft = { "tex", "bib" },
   config = function()
-    vim.g.vimtex_view_method = "mupdf"
+    vim.g.vimtex_mappings_disable = { ["n"] = { "K" } } -- disable `K` as it conflicts with LSP hover
+    vim.g.vimtex_quickfix_method = vim.fn.executable("pplatex") == 1 and "pplatex" or "latexlog"
     vim.g.vimtex_view_general_viewer = "mupdf"
-    vim.g.vimtex_view_forward_search_on_start = false
     vim.g.vimtex_toc_config = {
       mode = 1,
       fold_enable = 0,
@@ -21,3 +23,8 @@ return {
     }
   end,
 }
+--[[ "lervag/vimtex",
+  ft = "tex",
+  config = function()
+    vim.g.vimtex_view_forward_search_on_start = false
+  end, ]]
