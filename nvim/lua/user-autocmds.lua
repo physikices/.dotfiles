@@ -23,7 +23,7 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   end,
 })
 
--- vimtex
+-- vimtex conceal
 vim.api.nvim_create_autocmd({ "FileType" }, {
   group = vim.api.nvim_create_augroup("lazyvim_vimtex_conceal", { clear = true }),
   pattern = { "bib", "tex" },
