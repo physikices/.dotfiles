@@ -4,7 +4,7 @@ THEME="my-theme"
 
 # Terminate already running bar instances
 killall -q polybar
-# while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 #
 # If all your bars have ipc enabled, you can also use 
 # polybar-msg cmd quit

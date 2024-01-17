@@ -94,21 +94,25 @@ return {
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
         { name = "luasnip" },
-        { name = "lspconfig" },
-        { name = "buffer" },
+      },{
         { name = "path" },
+      },{
+        { name = "buffer" },
+          -- { name = "vimtex", },
+          -- { name = "lspconfig" }, -- nao funciona
       }),
       formatting = {
         format = function(entry, vim_item)
           vim_item.kind = string.format("%s %s", icons.kind[vim_item.kind], vim_item.kind)
           vim_item.menu = ({
-            luasnip = "[snp]",
+            -- vimtex = "",
             nvim_lsp = "[lsp]",
-            buffer = "[buf]",
+            luasnip = "[snp]",
             --treesitter = "[tre]",
             --nvim_lua = "[nvl]",
             path = "[pth]",
-            --spell = "[spl]",
+            buffer = "[buf]",
+            -- spell = "[spl]",
             --emoji = "[emj]",
             --calc = "[clc]",
             --cmdline = "[cmd]",
