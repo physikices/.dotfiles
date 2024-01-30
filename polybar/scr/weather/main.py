@@ -7,7 +7,7 @@ from requests.adapters import HTTPAdapter
 URL = "https://api.openweathermap.org/data/2.5/weather"
 # Get your API KEY here https://openweathermap.org/api,
 # and set an environment variable for OPENWEATHER_API_KEY with your API KEY.
-API_KEY = os.environ.get("OPENWEATHER_API_KEY", "970606528befaa317698cc75083db8b2")
+API_KEY = os.environ.get("OPENWEATHER_API_KEY","0cf97ede986eb6bc8f624d650b83333a")
 HEADER = {"User-agent": "Mozilla/5.0"}
 
 

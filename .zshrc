@@ -5,17 +5,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-[ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=/home/rodrigo/.local/bin:$PATH
-export PATH=$HOME/bin:/.config/lsp/lua-language-server/bin:$PATH
-
-
-# Diretórios TeXLive.
-export PATH=/usr/local/texlive/2022/bin/x86_64-linux:$PATH
-export MANPATH=/usr/local/texlive/2022/texmf-dist/doc/man:$MANPATH
-export INFOPATH=/usr/local/texlive/2022/texmf-dist/doc/info:$INFOPATH
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -24,9 +15,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
-SOLARIZED_THEME="dark"
-AWS_PROFILE="B.P34RL"
+ZSH_THEME=powerlevel10k/powerlevel10k
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -88,15 +77,18 @@ AWS_PROFILE="B.P34RL"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions web-search)
-#plugins=( [plugins...] zsh-syntax-highlighting)
-
+plugins=(
+  git
+  zsh-syntax-highlighting
+  zsh-autosuggestions
+)
 source $ZSH/oh-my-zsh.sh
-
-# now load zsh-syntax-highlighting plugin
-
+# source ~/.dotfiles/zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
+#
 # User configuration
-# eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+PATH=/usr/local/texlive/2023/bin/x86_64-linux:$PATH; export PATH
+MANPATH=/usr/local/texlive/2023/texmf-dist/doc/man:$MANPATH; export MANPATH
+INFOPATH=/usr/local/texlive/2023/texmf-dist/doc/info:$INFOPATH; export INFOPATH
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -121,16 +113,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+#
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-alias luamake=/home/rodrigo/.config/lsp/lua-language-server/3rd/luamake/luamake
-export PATH="${HOME}/.config/lsp/lua-language-server/bin:${PATH}"
-export PATH="${HOME}/.cargo/bin:${PATH}"
-export PATH="${HOME}/.local/share/nvim/pkgs/packages/fortls/venv/bin:${PATH}"
-
-# comando git para copiar subdiretorios github
 git-svn(){
   if [[ ! -z "$1" && ! -z "$2" ]]; then
           echo "Iniciando o clone/cópia ..."
@@ -141,19 +126,13 @@ git-svn(){
   fi  
 }
 
-[[ $TMUX != "" ]] && export TERM="screen-256color"
-
-# vi mode
 bindkey -v
-export KEYTIMEOUT=1
 
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
-
-
 
 
 # Catppuccin Mocha Theme (for zsh-syntax-highlighting)
@@ -230,3 +209,6 @@ ZSH_HIGHLIGHT_STYLES[redirection]='fg=#cdd6f4'
 ZSH_HIGHLIGHT_STYLES[arg0]='fg=#cdd6f4'
 ZSH_HIGHLIGHT_STYLES[default]='fg=#cdd6f4'
 ZSH_HIGHLIGHT_STYLES[cursor]='fg=#cdd6f4'
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

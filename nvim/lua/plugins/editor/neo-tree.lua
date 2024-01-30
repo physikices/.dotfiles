@@ -17,6 +17,20 @@ return {
       enable_git_status = true,
       enable_diagnostics = true,
 
+      window = {
+        mappings = {
+          ["b"] = {
+            'open_vsplit',
+            desc = "Same than 'open_split' but with a vertical split",
+          },
+          ["B"] = {
+            'open_split',
+            desc = "Same than 'open_vsplit' but with a hotizontal split",
+          },
+          ["s"] = 'noop',
+          ["S"] = 'noop',
+        }
+      },
       filesystem = {
         filtered_items = {
           -- visible = true, -- This is what you want: If you set this to `true`, all "hide" just mean "dimmed out"

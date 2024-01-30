@@ -6,7 +6,7 @@ local s = { silent = true }
 m('n', 'ss', ':split<Return><C-w>w')
 m('n', 'sv', ':vsplit<Return><C-w>w')
 
--- Move window
+-- navigate window
 m('', 'sh', '<C-w>h')
 m('', 'sk', '<C-w>k')
 m('', 'sj', '<C-w>j')

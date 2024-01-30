@@ -18,6 +18,7 @@
 # You can uncomment the line below to set 'Alt' key as the mod key.
 set $mod Mod1
 #set $mod Mod4
+exec setxkbmap -option caps:swapescape
 
 # Font for window titles. Will also be used by the bar.
 #font pango: DejaVu Sans Mono, Terminus Bold Semi-Condensed 11
@@ -43,8 +44,8 @@ bindsym $mod+q kill
 # defined in .desktop file, with their description, and corresponding
 # icons
 
-bindsym $mod+d exec --no-startup-id rofi -show drun
-# bindsym $mod+d exec --no-startup-id ~/.config/polybar/scripts/launcher.sh &
+# bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+d exec --no-startup-id ~/.config/rofi/deathemonic/bin/launcher &
 
 # The other mode search for applications in /usr/bin or /usr/sbin.
 # This should only be used if a program lacks a .desktop file.
@@ -53,7 +54,7 @@ bindsym $mod+Shift+d exec --no-startup-id rofi -show run -theme Monokai
 # Launch Polybar. Take a look at ~/.confi/polybar/config to
 # configure the bar.
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec --no-startup-id polybar example -r
+# exec --no-startup-id polybar example -r
 
 # Display Wallpaper, always.
 # exec_always feh --bg-fill $HOME/Imagens/wallpapers/theme_2.jpg
@@ -63,7 +64,7 @@ exec_always feh --bg-fill $HOME/.dotfiles/wallpapers/mountain.jpg
 gaps inner 10
 
 #Compositor. This helps in transparency and fading.
-exec_always picom -f
+exec_always picom -f --config $HOME/.config/picom/picom.conf
 
 # Lock Screen This will yield a black lock screen, which
 # can be customized to your liking.
@@ -86,7 +87,7 @@ bindsym $mod+x exec betterlockscreen -l
 
 # The 4 lines of text above come from i3 documentation. Waking up from a suspended
 # system will launch betterlockscreen
-exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -306,7 +307,8 @@ bindsym $mod+r mode "resize"
 # Note: You will have to launch the program from a program launcher (rofi).
 for_window [class="kitty"] move to workspace $ws1
 for_window [class="okular"] move to workspace $ws2
-for_window [class="Brave-browser"] move to workspace $ws3
+# for_window [class="Brave-browser"] move to workspace $ws3
+for_window [class="firefox"] move to workspace $ws3
 for_window [class="Thunar"] move to workspace $ws4
 for_window [class="Spotify"] move to workspace $ws5
 # assign [class="Spotify"] $ws10

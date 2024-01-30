@@ -1,0 +1,100 @@
+/* thunar */
+
+/* color palette */
+@define-color bg_mantle #11111B;
+@define-color bg_crust #181825;
+@define-color bg_base #1E1E2E;
+
+@define-color bg_surface0 #313244;
+@define-color bg_surface1 #45475A;
+@define-color bg_surface2 #585B70;
+
+@define-color fg_subtext0 #A6ADC8;
+@define-color fg_subtext1 #BAC2DE;
+@define-color fg_text #CDD6F4;
+
+@define-color thm_rosewater #F5E0DC;
+@define-color thm_sky #89DCEB;
+@define-color thm_blue #89B4FA;
+
+/*****************/ 
+
+
+/* menu-bar */
+.thunar menubar {
+  background-color: @bg_mantle;
+  color: @fg_text;
+}
+/*****************/ 
+
+/* tool-bar */
+.thunar toolbar  {
+  background-color: @bg_base;
+  color: @fd_text;
+  padding: 10px 10px;
+}
+
+.thunar toolbar entry {
+  background-color: @bg_surface0;
+  color: @fg_text;
+  border-width: 0;
+  margin: 0 20px;
+}
+
+.thunar toolbar button {
+  margin-right: 5px;
+  margin-left: 5px;
+  color: @thm_blue;
+  padding: 5px;
+}
+
+.thunar toolbar button:hover {
+  background-color: @bg_base;
+  color: @bg_base;
+}
+
+/*****************/ 
+
+/* sidebar */
+.thunar .sidebar .view {
+  background-color: @bg_crust;
+  color: @fg_subtext1;
+}
+
+.thunar .sidebar *:selected {
+  background-color: @bg_surface0;
+  color: @fg_text;
+  border-width: 0;
+}
+/*****************/ 
+
+/* main view */
+.thunar .standard-view .view {
+  background-color: @bg_base;
+  color: @fg_subtext1;
+}
+
+.thunar .standard-view *:selected {
+  background-color: @bg_surface0;
+	color: @fg_text;
+  border-width: 0;
+}
+/*****************/ 
+
+/* .thunar grid panned notebook { */
+/*   background-color: #94E2D5; */
+/*   color: #CDD6F4; */
+/*   border-radius: 10px; */
+/* } */
+
+
+
+/* status bar */
+.thunar grid paned grid  {
+  background-color: #181825;
+  color: #A6ADC8;
+}
+
+
+
+
