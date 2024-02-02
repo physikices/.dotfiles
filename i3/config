@@ -92,7 +92,7 @@ bindsym $mod+x exec betterlockscreen -l
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 # We use this. System dark theme is applied to it.
-exec --no-startup-id nm-applet
+# exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 # These are examples if you would like to use pactl. We will not use this,
@@ -307,7 +307,6 @@ bindsym $mod+r mode "resize"
 # Note: You will have to launch the program from a program launcher (rofi).
 for_window [class="kitty"] move to workspace $ws1
 for_window [class="okular"] move to workspace $ws2
-# for_window [class="Brave-browser"] move to workspace $ws3
 for_window [class="firefox"] move to workspace $ws3
 for_window [class="Thunar"] move to workspace $ws4
 for_window [class="Spotify"] move to workspace $ws5
@@ -315,6 +314,8 @@ for_window [class="Spotify"] move to workspace $ws5
 for_window [class="Inkscape"] move to workspace $ws6
 for_window [class="Gimp"] move to workspace $ws7
 for_window [class="XMgrace"] move to workspace $ws8
+for_window [class="Brave"] move to workspace $ws9
+for_window [class="obsidian"] move to workspace $ws10
 
 # The following way allows programs to be launched with a
 # defined keybinding, on a certain workspace, without

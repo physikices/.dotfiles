@@ -21,8 +21,8 @@ window {
     border-color:                   @BGA;
     border-radius:                  10px;
     width:                          110px;
-    x-offset:                       -50%;
-    y-offset:                       0;
+    x-offset:                       -47.25%;
+    y-offset:                       0%;
 }
 
 prompt {
