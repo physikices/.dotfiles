@@ -116,16 +116,6 @@ INFOPATH=/usr/local/texlive/2023/texmf-dist/doc/info:$INFOPATH; export INFOPATH
 #
 #
 
-git-svn(){
-  if [[ ! -z "$1" && ! -z "$2" ]]; then
-          echo "Iniciando o clone/cópia ..."
-          repo=$(echo $1 | sed 's/\/$\|.git$//')
-          svn export "$repo/trunk/$2"
-  else
-          echo "Use: git-svn <repository> <subdirectory>"
-  fi  
-}
-
 bindkey -v
 
 # Use vim keys in tab complete menu:
