@@ -78,3 +78,21 @@ color14 #94E2D5
 # white
 color7  #BAC2DE
 color15 #A6ADC8
+
+# fonts
+font_family       MesloLGS NF Regular
+bold_font         MesloLGS NF Bold
+italic_font       MesloLGS NF Italic
+bold_italic_font  MesloLGS NF Bold Italic
+
+font_size 11.0
+force_ltr no
+
+adjust_line_height  0
+adjust_column_width 0
+
+# disable_ligatures never
+
+font_features none
+
+box_drawing_scale 0.001, 1, 1.5, 2
