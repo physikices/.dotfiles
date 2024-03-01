@@ -24,5 +24,11 @@ return {
       indent_levels = 1,
       todo_sorted = 1,
     }
+
+    vim.g.vimtex_quickfix_ignore_filters = {
+      'Underfull',
+      'Overfull',
+      'LaTeX Font Warning',
+    }
   end,
 }
