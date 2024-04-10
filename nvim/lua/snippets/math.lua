@@ -291,7 +291,7 @@ return {
         snippetType="autosnippet"
       },
       fmta(
-        "<>\\vec{<>}",
+        "<>\\va{<>}",
         {
           f(function(_, snip) return
             snip.captures[1]
@@ -675,6 +675,25 @@ return {
       ),
       { condition = tex.in_mathzone }
     ),
+    -- PARTIAL DIFFERENTIAL i.e. \partial_{}
+    s(
+      {
+        trig = "([^%a])del",
+        wordTrig = false,
+        regTrig = true,
+        snippetType="autosnippet"
+      },
+      fmta(
+        "<>\\partial_{<>}",
+        {
+          f(function(_, snip)
+            return snip.captures[1]
+          end),
+          i(1),
+        }
+      ),
+      { condition = tex.in_mathzone }
+    ),
     --
     -- BEGIN STATIC SNIPPETS
     --
@@ -870,6 +889,50 @@ return {
       {
         t("\\cp "),
       }
+    ),
+    --
+    -- TENSORES
+    -- rank 2, covariant
+    s(
+      {
+        trig = "([^%a])Tt",
+        wordTrig = false,
+        regTrig = true,
+        snippetType="autosnippet"
+      },
+      fmta(
+        "<>\\tensor{<>}{_{<> <>}}",
+        {
+          f(function(_, snip)
+            return snip.captures[1]
+          end),
+          i(1),
+          i(2),
+          i(3),
+        }
+      ),
+      { condition = tex.in_mathzone }
+    ),
+    -- rank 2, contravariant
+    s(
+      {
+        trig = "([^%a])TT",
+        wordTrig = false,
+        regTrig = true,
+        snippetType="autosnippet"
+      },
+      fmta(
+        "<>\\tensor{<>}{^{<> <>}}",
+        {
+          f(function(_, snip)
+            return snip.captures[1]
+          end),
+          i(1),
+          i(2),
+          i(3),
+        }
+      ),
+      { condition = tex.in_mathzone }
     ),
   }),
 }

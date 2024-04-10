@@ -29,6 +29,7 @@ return {
       'Underfull',
       'Overfull',
       'LaTeX Font Warning',
+      'Package siunitx Warning'
     }
   end,
 }

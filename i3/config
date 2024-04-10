@@ -58,7 +58,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Display Wallpaper, always.
 # exec_always feh --bg-fill $HOME/Imagens/wallpapers/theme_2.jpg
-exec_always feh --bg-fill $HOME/.dotfiles/wallpapers/mountain.jpg
+exec_always feh --bg-fill $HOME/.dotfiles/wallpapers/Anime-girl-rotated.png
 
 # Provide Gaps to Windows. Increase/Decrease as you like.
 gaps inner 10
