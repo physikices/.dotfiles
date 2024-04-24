@@ -695,6 +695,25 @@ return {
       { condition = tex.in_mathzone }
     ),
     --
+    -- PARTIAL DIFFERENTIAL UPPER i.e. \partial^{}
+    s(
+      {
+        trig = "([^%a])Del",
+        wordTrig = false,
+        regTrig = true,
+        snippetType="autosnippet"
+      },
+      fmta(
+        "<>\\partial^{<>}",
+        {
+          f(function(_, snip)
+            return snip.captures[1]
+          end),
+          i(1),
+        }
+      ),
+      { condition = tex.in_mathzone }
+    ),
     -- BEGIN STATIC SNIPPETS
     --
 

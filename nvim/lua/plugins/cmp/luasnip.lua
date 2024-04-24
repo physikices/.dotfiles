@@ -2,6 +2,7 @@ return {
   "L3MON4D3/LuaSnip",
 
   ft = { "tex", "bib" },
+  run = { "make install_jsregexp" },
   dependencies = {
     "rafamadriz/friendly-snippets",
     "saadparwaiz1/cmp_luasnip",

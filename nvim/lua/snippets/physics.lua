@@ -112,5 +112,46 @@ return {
       ),
       {condition = tex.in_mathzone }
     ),
+    -- matrix element
+    s(
+      {
+        trig = "([^%a])mE",
+        wordTrig=false,
+        regTrig = true,
+        snippetType="autosnippet"
+      },
+      fmta(
+        "<>\\mel{<>}{<>}{<>}",
+        {
+          f(function(_, snip)
+            return snip.captures[1]
+          end),
+          d(1, get_visual),
+          i(2),
+          i(3),
+        }
+      ),
+      {condition = tex.in_mathzone }
+    ),
+    -- expactation value
+    s(
+      {
+        trig = "([^%a])eV",
+        wordTrig=false,
+        regTrig = true,
+        snippetType="autosnippet"
+      },
+      fmta(
+        "<>\\ev{<>}{<>}",
+        {
+          f(function(_, snip)
+            return snip.captures[1]
+          end),
+          d(1, get_visual),
+          i(2),
+        }
+      ),
+      {condition = tex.in_mathzone }
+    ),
   })
 }
