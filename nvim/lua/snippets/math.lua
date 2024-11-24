@@ -244,6 +244,43 @@ return {
       ),
       { condition = tex.in_mathzone }
     ),
+    -- PRIME SUPERSCRIPT SHORTCUT
+    s(
+      {
+        trig = '([%a%)%]%}])pP',
+        regTrig = true,
+        wordTrig = false,
+        snippetType="autosnippet"
+      },
+      fmta(
+        "<>^{<>}",
+        {
+          f(function(_, snip)
+            return snip.captures[1]
+          end),
+          t("\\prime")
+        }
+      ),
+      { condition = tex.in_mathzone }
+    ),
+    s(
+      {
+        trig = '([%a%)%]%}])PP',
+        regTrig = true,
+        wordTrig = false,
+        snippetType="autosnippet"
+      },
+      fmta(
+        "<>^{<>}",
+        {
+          f(function(_, snip)
+            return snip.captures[1]
+          end),
+          t("\\prime\\prime")
+        }
+      ),
+      { condition = tex.in_mathzone }
+    ),
     -- COMPLEMENT SUPERSCRIPT
     s(
       {
