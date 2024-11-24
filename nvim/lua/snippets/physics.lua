@@ -153,5 +153,44 @@ return {
       ),
       {condition = tex.in_mathzone }
     ),
+    -- hat notation
+    s(
+      {
+        trig = "([^%a])hH",
+        wordTrig=false,
+        regTrig = true,
+        snippetType="autosnippet"
+      },
+      fmta(
+        "<>\\hat{<>}",
+        {
+          f(function(_, snip)
+            return snip.captures[1]
+          end),
+          d(1, get_visual),
+        }
+      ),
+      {condition = tex.in_mathzone }
+    ),
+    -- expactation value
+    s(
+      {
+        trig = "([^%a])cmm",
+        wordTrig=false,
+        regTrig = true,
+        snippetType="autosnippet"
+      },
+      fmta(
+        "<>\\comm{<>}{<>}",
+        {
+          f(function(_, snip)
+            return snip.captures[1]
+          end),
+          d(1, get_visual),
+          i(2),
+        }
+      ),
+      {condition = tex.in_mathzone }
+    ),
   })
 }

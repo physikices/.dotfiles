@@ -10,6 +10,7 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
+vim.g.python3_host_prog = '/home/bside/.venv/bin/python3'
 
 require("user-options")
 require("user-mappings")

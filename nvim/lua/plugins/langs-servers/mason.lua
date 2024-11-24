@@ -24,7 +24,7 @@ return {
           'fortls',
           'html',
           'cssls',
-          'tsserver'
+          'ts_ls'
         }
       })
     end
