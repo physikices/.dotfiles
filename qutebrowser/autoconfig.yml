@@ -6,9 +6,7 @@
 
 config_version: 2
 settings:
-  fileselect.multiple_files.command:
-    global:
-    - xterm
-    - -e
-    - ranger
-    - --choosefiles={}
+  content.javascript.can_open_tabs_automatically:
+    global: true
+  content.javascript.clipboard:
+    global: access
