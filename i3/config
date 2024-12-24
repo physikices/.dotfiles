@@ -58,7 +58,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Display Wallpaper, always.
 # exec_always feh --bg-fill $HOME/Imagens/wallpapers/theme_2.jpg
-exec_always feh --bg-fill $HOME/.dotfiles/wallpapers/Anime-girl-rotated.png
+exec_always feh --bg-fill $HOME/.config/wallpapers/Anime-girl-rotated.png
 
 # Provide Gaps to Windows. Increase/Decrease as you like.
 gaps inner 10
@@ -280,6 +280,9 @@ client.unfocused        #1e1e2e #1e1e2e #5B6579 #1e1e2e   #1e1e2e
 client.urgent           #1e1e2e #1e1e2e #ffffff #1e1e2e   #1e1e2e
 client.placeholder      #1e1e2e #1e1e2e #ffffff #1e1e2e   #1e1e2e
 
+# Activate smart borders (always)
+smart_borders on
+
 ##Configurações de Usuário##
 # scrot & gimp - root
 bindsym Print exec deepin-screen-recorder
@@ -308,7 +311,7 @@ bindsym $mod+r mode "resize"
 # Note: You will have to launch the program from a program launcher (rofi).
 for_window [class="kitty"] move to workspace $ws1
 for_window [class="okular"] move to workspace $ws2
-for_window [class="firefox"] move to workspace $ws3
+for_window [class="qutebrowser"] move to workspace $ws3
 for_window [class="Thunar"] move to workspace $ws4
 for_window [class="Spotify"] move to workspace $ws5
 # assign [class="Spotify"] $ws10
@@ -322,7 +325,7 @@ for_window [class="obsidian"] move to workspace $ws10
 # defined keybinding, on a certain workspace, without
 # touching program launcher. Assign Programs to respective
 # workspaces.
-# bindsym $mod+b workspace 5; exec Brave-browser
+bindsym $mod+b workspace 3; exec qutebrowser
 
 
 #Multi Monitor (Dual Monitor, extended monitor)
