@@ -1,0 +1,189 @@
+@import "mocha.css";
+
+* {
+  font-family: CaskaydiaCoverNerdFont-Regular;
+  min-height: 0px;
+  font-size: 97%;
+  font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+  color: @overlay0;
+  padding: 1px;
+}
+
+window#waybar {
+  background-color: transparent;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  border-radius: 10px;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+#waybar.empty {
+  background: none;
+}
+
+button:hover {
+  background: none;
+  border-color: transparent;
+}
+
+/* This section can be use if you want to separate waybar modules */
+.modules-left, .modules-center, .modules-right {
+  background: @crust; 
+  border: 0px solid @overlay0;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-right: 4px;
+  padding-left: 4px;
+  border-radius: 12px;
+
+} 
+
+.modules-left, .modules-right {
+  border: 0px solid @blue;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-right: 4px;
+  padding-left: 4px;
+} 
+
+
+#clock,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#custom-media,
+#power-profiles-daemon,
+#mpd {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-right: 6px;
+  padding-left: 6px;
+}
+
+#clock {
+  color: @text;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+#cpu {
+  color: @green;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+#custom-keyboard,
+#memory {
+  color: @sky;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+#disk {
+  color: @sapphire;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+#workspaces button {
+  box-shadow: none;
+  text-shadow: none;
+  padding: 0px;
+  border-radius: 9px;
+  padding-left: 4px;
+  padding-right: 4px;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#workspaces button:hover {
+  border-radius: 10px;
+  color: @overlay0;
+  background-color: @surface0;
+  padding-left: 2px;
+  padding-right: 2px;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#workspaces button.persistent {
+  color: @surface1;
+  border-radius: 10px;
+}
+
+#workspaces button.active {
+  color: @teal;
+  border-radius: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#workspaces button.urgent {
+  color: @red;
+  border-radius: 0px;
+}
+
+#pulseaudio {
+  color: @green;
+}
+
+#pulseaudio.muted {
+  color: @red;
+}
+
+#window {
+  color: @mauve;
+}
+
+#custom-waybar-mpris {
+  color:@lavender;
+}
+
+#network {
+  color: @teal;
+}
+#network.disconnected,
+#network.disabled {
+  background-color: @surface0;
+  color: @text;
+}
+#pulseaudio-slider slider {
+  min-width: 0px;
+  min-height: 0px;
+  opacity: 0;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+}
+
+#pulseaudio-slider trough {
+  min-width: 80px;
+  min-height: 5px;
+  border-radius: 5px;
+}
+
+#pulseaudio-slider highlight {
+  min-height: 10px;
+  border-radius: 5px;
+}
+
+/* #workspaces button.empty{ */
+/*   background-color: @surface0; */
+/*   color: @overlay0; */
+/*   border-radius: 20px; */
+/* } */
+

@@ -1,0 +1,6 @@
+mode=drun
+allow_images=true
+prompt=search
+height=40%
+width=50%
+location=center
