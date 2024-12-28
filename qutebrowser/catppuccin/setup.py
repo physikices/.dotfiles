@@ -304,14 +304,14 @@ def setup(c, flavour, samecolorrows = False):
     ## Background color of the tab bar.
     c.colors.tabs.bar.bg = palette["crust"]
     ## Background color of unselected even tabs.
-    c.colors.tabs.even.bg = palette["surface2"]
+    c.colors.tabs.even.bg = palette["mantle"]
     ## Background color of unselected odd tabs.
-    c.colors.tabs.odd.bg = palette["surface1"]
+    c.colors.tabs.odd.bg = palette["mantle"]
 
     ## Foreground color of unselected even tabs.
-    c.colors.tabs.even.fg = palette["overlay2"]
+    c.colors.tabs.even.fg = palette["overlay1"]
     ## Foreground color of unselected odd tabs.
-    c.colors.tabs.odd.fg = palette["overlay2"]
+    c.colors.tabs.odd.fg = palette["overlay1"]
 
     ## Color for the tab indicator on errors.
     c.colors.tabs.indicator.error = palette["red"]
@@ -324,14 +324,14 @@ def setup(c, flavour, samecolorrows = False):
     c.colors.tabs.indicator.system = "none"
 
     # ## Background color of selected even tabs.
-    c.colors.tabs.selected.even.bg = palette["teal"]
+    c.colors.tabs.selected.even.bg = palette["surface1"]
     # ## Background color of selected odd tabs.
-    c.colors.tabs.selected.odd.bg = palette["teal"]
+    c.colors.tabs.selected.odd.bg = palette["surface1"]
 
     # ## Foreground color of selected even tabs.
-    c.colors.tabs.selected.even.fg = palette["base"]
+    c.colors.tabs.selected.even.fg = palette["teal"]
     # ## Foreground color of selected odd tabs.
-    c.colors.tabs.selected.odd.fg = palette["base"]
+    c.colors.tabs.selected.odd.fg = palette["teal"]
     # }}}
 
     # context menus {{{
