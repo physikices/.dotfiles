@@ -1,81 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>HOME</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+<html lang="pt-br" class="dark">
+	<head>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
 
-    <script async type="text/javascript" src="script.js"></script>
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'sha256-HASH-OF-YOUR-SCRIPT-FILE'">
+		<meta charset="UTF-8">
 
-  </head>
-  <body>
-    <div class="container" id="contFocus">
-      <div class="left-container">
-        <div class="time-holder">
-          <p id="time"></p>
-        </div>
-        </br>
-        <div class="gif" id="imgCont">
-          <!--<img src="ico/ac3.webp" id="ac" height="300">-->
-          <img src="ico/ac1.png" id="ac" height="300" />
-        </div>
-        <div class="modeContainer">
-          <button class="mode_class" id="modeButton">
-            <img src="ico/light.png" id="mode" height="24" />
-          </button>
-        </div>
-      </div>
-      <div class="right-container">
-        <div class="head">
-          <form id="search-bar" name="search-bar">
-            <div class="form-group">
-              <div id="terminal-content"></div>
-             
-              <div class="terminalInput" id="terminalSearch"></div>
-            </div>
-          </form>
-        </div>
-        <div class="bookmarks">
-          <div class="category">
-            <div class="links" id="links_a">
-              <li>
-                <a href="https://www.youtube.com/feed/subscriptions">YouTube</a>
-              </li>
-              <li>
-                <a href="https://web.whatsapp.com">WhatsApp</a>
-              </li>
-              <!-- <li> -->
-              <!--   <a href="https://www.tradingview.com/chart/">Tradingview</a> -->
-              <!-- </li> -->
-            </div>
-          </div>
-          <div class="category">
-            <div class="links" id="links_b">
-              <li>
-                <a href="https://github.com/physikices">Github</a>
-              </li>
-              <li>
-                <a href="https://mail.google.com/mail/u/0/?hl=pt#inbox">Gmail</a>
-              </li>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-            </div>
-          </div>
-          <div class="category">
-            <div class="links" id="links_c">
-              <li>
-                <a href="https://chat.openai.com/chat">ChatGTP</a>
-              </li>
-              <li>
-                <a href="https://www.tradingview.com/chart/">Tradingview</a>
-              </li>
-              <!-- <li> -->
-              <!--   <a href="https://typst.app/">Typst</a> -->
-              <!-- </li> -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+		<title>Home | @bside</title>
+		<link href="css/style.css" rel="stylesheet">
+	</head>
+	<body>
+		<!-- atributos "id" são sempre únicos -->
+		<div id="container">
+			<div id="profile">
+				<img src="assets/avatar.png" alt="Foto de perfil Neuromancer"/>
+				<p>Home | @bside</p>
+			</div>
+
+			<div id="switch" onclick="toggleMode()">
+				<button></button>
+				<span></span>
+			</div>
+
+			<ul>
+				<li>
+					<a href="https://web.whatsapp.com">Whatsapp Web</a>
+				</li>
+				<li>
+					<a href="https://github.com/physikices">GitHub</a>
+				</li>
+				<li>
+          <a href="https://www.youtube.com">YouTube</a>
+				</li>
+			</ul>
+
+			<ul>
+				<li>
+          <a href="https://mail.google.com/mail/u/0/?hl=pt#inbox">Gmail</a>
+				</li>
+				<li>
+					<a href="https://outlook.office.com/mail">Outlook</a>
+				</li>
+				<li>
+					<a href="https://account.proton.me/login">Proton</a>
+				</li>
+			</ul>
+
+			<footer>
+				startpage | 
+				<a href="https://www.qutebrowser.org">qutebrowser</a>
+			</footer>
+		</div>
+
+
+		<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+		<script src="./script.js"></script>
+
+	</body>
 </html>

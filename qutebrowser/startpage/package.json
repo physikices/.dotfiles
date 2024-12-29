@@ -1,0 +1,17 @@
+{
+  "name": "html-css",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+		"dev": "vite",
+		"build": "vite build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+	"devDependencies":{
+    "vite": "^5.0.8"
+	}
+}
