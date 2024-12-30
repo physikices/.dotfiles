@@ -5,7 +5,34 @@
 }
 
 :root {
-	--text-color: #CDD6F4;
+  --color-rosewater: #F5E0DC;
+  --color-flamingo: #F2CDCD;
+  --color-pink: #F5C2E7;
+  --color-mauve: #CBA6F7;
+  --color-red: #F38BA8;
+  --color-maroon: #EBA0AC;
+  --color-peach: #FAB387;
+  --color-yellow: #F9E2AF;
+  --color-green: #A6E3A1;
+  --color-teal: #94E2D5;
+  --color-sky: #89DCEB;
+  --color-sapphire: #74C7EC;
+  --color-blue: #89B4FA;
+  --color-lavender: #B4Befe;
+  --color-text: #CDD6F4;
+  --color-subtext1: #BAC2DE;
+  --color-subtext0: #A6ADC8;
+  --color-overlay2: #9399B2;
+  --color-overlay1: #7F849C;
+  --color-overlay0: #6C7086;
+  --color-surface2: #585B70;
+  --color-surface1: #45475A;
+  --color-surface0: #313244;
+  --color-base: #1E1E2E;
+  --color-mantle: #181825;
+  --color-crust: #11111B;
+
+  --text-color: var(--color-text);
 	--bg-url: url(../assets/bg-mobile.png);
 	--stroke-color: rgba(255, 255, 255, 0.5);
 	--surface-color: rgba(255, 255, 255, 0.08);
@@ -15,7 +42,7 @@
 }
 
 .light {
-	--text-color: #181825;
+	--text-color: var(--color-base);
 	--bg-url: url(../assets/bg-mobile-light.png);
 	--stroke-color: rgba(0, 0, 0, 0.5);
 	--surface-color: rgba(0, 0, 0, 0.08);
@@ -81,6 +108,7 @@ body * {
 	animation: slide-out 0.4s;
 }
 
+
 .light #switch button{
 	animation: slide-in 0.4s forwards;
 }
@@ -132,6 +160,60 @@ ul li a:hover {
 	background: var(--surface-color-hover);
 	border: 1px solid var(--text-color);
 }
+
+#social-links {
+  margin: 0 auto;
+	display: flex;
+  width: 50%;
+	justify-content: space-between; 
+	padding: 24px 0;
+	font-size: 24px;
+}
+
+#social-links a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 16px;
+	border-radius: 50%;
+	transition: background 0.3s;
+  width: 25px;
+  height: 25px;
+  background: var(--color-surface0);
+}
+
+#social-links a:hover {
+  background: var(--highlight-color);
+}
+
+.light #social-links a {
+  background: var(--color-surface2);
+}
+
+.light #social-links a:hover {
+  background: var(--color-overlay2);
+}
+
+#social-links img {
+  width: 20px;
+  height: 20px;
+}
+#social-links.icon {
+  width: 25px;
+  height: 25px;
+  
+}
+
+#brand-links {
+  display: flex;
+  align-items: center;
+}
+
+.brand-icon {
+  width: 24px;
+  margin: 0 4px;
+}
+
 
 footer {
 	padding: 24px 0;
