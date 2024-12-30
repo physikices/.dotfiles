@@ -53,14 +53,17 @@
 }
 
 #entry:selected {
-  background-color: @surface0;
+  background-color: @teal;
   padding: 2px;
   border-radius: 10px;
-  border-color: @surface2;
   border-width: 1px;
   height: 5px;
 }
 
-image {
+#text:selected {
+  color: @base;
+}
+
+#img {
   margin: 0 5 0 0;
 }
