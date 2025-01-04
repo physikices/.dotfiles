@@ -45,21 +45,23 @@
   "hyprland/workspaces":{
     "active-only": false,
     "all-outputs": true,
+    "disable-scroll": true,
     "format": "{icon}",
     "show-special": false,
+    "special-visible-only": true,
     "persistent-workspaces": {
       "1": [],
       "2": [],
-      "3": [],
-      "4": [],
-      "5": []
+      "3": []
     },
     "format-icons": {
       "active": "<span color='#fab387'></span>",
       "default": "",
-      "empty": ""
+      "empty": "",
+      "special": " "
     }
   },
+
 
   "hyprland/window": {
     "format": " | <span color='#fab387'>  {title} </span>"
