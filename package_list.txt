@@ -75,9 +75,11 @@ rofi
 smartmontools
 snapd
 sof-firmware
+subversion
 textext
 thunar
 tmux
+translate-shell
 tree
 tumbler
 ueberzug
