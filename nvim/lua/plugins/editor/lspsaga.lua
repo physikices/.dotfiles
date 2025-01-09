@@ -12,7 +12,7 @@ return {
     require("lspsaga").setup({
       ui = {
         sign = true,
-        border = 'single',
+        border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
         devicon = true,
         title = true,
         expand = icons.kind.Expand,
