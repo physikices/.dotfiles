@@ -6,7 +6,7 @@ if ! pgrep -x "waybar" > /dev/null; then
 fi
 
 # current checksums
-current_checksum_config=$(md5sum ~/.config/waybar/config.jasonc)
+current_checksum_config=$(md5sum ~/.config/waybar/config.jsonc)
 current_checksum_style=$(md5sum ~/.config/waybar/style.css)
 
 # loop forever

@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.g.loaded_ruby_provider = 0
 vim.g.loaded_perl_provider = 0
-vim.g.python3_host_prog = '/sbin/python3'
+vim.g.python3_host_prog = '$HOME/.venv/bin/python3'
 
 require("user-options")
 require("user-mappings")

@@ -4,7 +4,7 @@
   "margin-bottom": 0,
   "margin-left": 0,
   "margin-right": 0,
-  "height": 16,
+  "height": 26,
   "width": 1900,
   "spacing": 0,
 
@@ -171,7 +171,13 @@
     "tooltip-format-disconnected": "󰌙 Disconnected",
     "max-length": 50,
     "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"]
+  },
+
+  "tray": {
+    "icon-size": 21,
+    "spacing": 10
   }
+
 
   // "network": {
   //   // "interface": "wlp2*", // (Optional) To force the use of this interface
