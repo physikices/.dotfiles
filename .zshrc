@@ -88,9 +88,9 @@ source $ZSH/oh-my-zsh.sh
 # source ~/.dotfiles/zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 #
 # User configuration
-PATH=/usr/local/texlive/2023/bin/x86_64-linux:$PATH; export PATH
-MANPATH=/usr/local/texlive/2023/texmf-dist/doc/man:$MANPATH; export MANPATH
-INFOPATH=/usr/local/texlive/2023/texmf-dist/doc/info:$INFOPATH; export INFOPATH
+PATH=/usr/local/texlive/2025/bin/x86_64-linux:$PATH; export PATH
+MANPATH=/usr/local/texlive/2025/texmf-dist/doc/man:$MANPATH; export MANPATH
+INFOPATH=/usr/local/texlive/2025/texmf-dist/doc/info:$INFOPATH; export INFOPATH
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
