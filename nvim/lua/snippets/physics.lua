@@ -172,6 +172,26 @@ return {
       ),
       {condition = tex.in_mathzone }
     ),
+
+    -- bar notation
+    s(
+      {
+        trig = "([^%a])bB",
+        wordTrig=false,
+        regTrig = true,
+        snippetType="autosnippet"
+      },
+      fmta(
+        "<>\\bar{<>}",
+        {
+          f(function(_, snip)
+            return snip.captures[1]
+          end),
+          d(1, get_visual),
+        }
+      ),
+      {condition = tex.in_mathzone }
+    ),
     -- expactation value
     s(
       {
