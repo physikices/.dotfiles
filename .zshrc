@@ -116,6 +116,7 @@ INFOPATH=/usr/local/texlive/2025/texmf-dist/doc/info:$INFOPATH; export INFOPATH
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias fpm="~/Desktop/pos_graduacao/01_github/codes/fpm_apps/fpm-0.10.0-linux-x86_64"
+alias ls='exa --icons'
 #
 
 bindkey -v
