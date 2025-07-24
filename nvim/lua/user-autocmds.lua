@@ -31,3 +31,15 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     vim.wo.conceallevel = 0 -- put 2 to activate it
   end,
 })
+
+-- remove lsp.log on exit
+vim.api.nvim_create_autocmd("VimLeavePre", {
+  group = augroup("clean_lsp_log"),
+  callback = function()
+    local log = vim.fn.stdpath("state") .. "/lsp.log"
+    if vim.fn.filereadable(log) == 1 then
+      vim.notify("Removing LSP log: " .. log)
+      os.remove(log)
+    end
+  end,
+})

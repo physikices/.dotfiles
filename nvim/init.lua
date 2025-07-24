@@ -16,6 +16,9 @@ vim.g.loaded_ruby_provider = 0
 vim.g.loaded_perl_provider = 0
 vim.g.python3_host_prog = '$HOME/.venv/bin/python3'
 
+-- Desabilita temporariamente PYTHON_ARGCOMPLETE_OK para evitar o erro
+vim.env._ARGCOMPLETE = 0
+
 require("user-options")
 require("user-mappings")
 require("user-icons")
