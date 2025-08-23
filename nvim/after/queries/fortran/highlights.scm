@@ -8,22 +8,48 @@
 
 ; agrupar todos os "end..." que a gramática usa
 [
-  "endif"
-  "endwhere"
-  "enddo"
-  "endforall"
+  "associate"
   "endassociate"
+  "enum"
   "endenum"
+  "select"
   "endselect"
-  "endprocedure"
-  "endfunction"
-  "endprogram"
-  "endsubroutine"
-  "endmodule"
+  "interface"
   "endinterface"
+  "type"
   "endtype"
+] @keyword.specials
+
+; agrupar estruturas de repetição e condicional
+[
+  "where"
+  "endwhere"
+  "do"
+  "enddo"
+  "if"
+  "then"
+  "endif"
+  "else"
+  "elseif"
+  "forall"
+  "endforall"
+] @keyword.control
+
+; agrupar estrutras de declaração
+[
+  "procedure"
+  "endprocedure"
+  "function"
+  "endfunction"
+  "program"
+  "endprogram"
+  "subroutine"
+  "endsubroutine"
+  "module"
+  "endmodule"
+  "submodule"
   "endsubmodule"
-] @keyword.end
+] @keyword.declaration
 
 ; TIPOS INTRÍNSECOS MESMO COM PARAMETRIZAÇÃO (ex: real(dp))
 ((intrinsic_type) @type.real
