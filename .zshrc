@@ -117,15 +117,28 @@ INFOPATH=/usr/local/texlive/2025/texmf-dist/doc/info:$INFOPATH; export INFOPATH
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias fpm="~/Desktop/pos_graduacao/01_github/codes/fpm_apps/fpm-0.10.0-linux-x86_64"
 alias ls='exa --icons'
-#
 
+# Habilitar modo vi
 bindkey -v
 
-# Use vim keys in tab complete menu:
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
+# Função para trocar forma do cursor conforme o modo
+function zle-keymap-select {
+  case $KEYMAP in
+    vicmd)      echo -ne '\e[2 q' ;;  # Block
+    viins|main) echo -ne '\e[5 q' ;;  # Blink-Beam
+  esac
+}
+zle -N zle-keymap-select
+
+# Cursor inicial ao abrir o prompt
+function zle-line-init {
+  echo -ne '\e[5 q'
+}
+zle -N zle-line-init
+
+# Também garante reset ao sair
+precmd() { echo -ne '\e[5 q'; }
+
 
 
 # Catppuccin Mocha Theme (for zsh-syntax-highlighting)
