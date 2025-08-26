@@ -8,6 +8,7 @@
 
 ; agrupar todos os "end..." que a gramática usa
 [
+  "abstract"
   "associate"
   "endassociate"
   "enum"
@@ -37,6 +38,8 @@
 
 ; agrupar estrutras de declaração
 [
+  "elemental"
+  "pure"
   "procedure"
   "endprocedure"
   "function"
