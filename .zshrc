@@ -92,6 +92,11 @@ PATH=/usr/local/texlive/2025/bin/x86_64-linux:$PATH; export PATH
 MANPATH=/usr/local/texlive/2025/texmf-dist/doc/man:$MANPATH; export MANPATH
 INFOPATH=/usr/local/texlive/2025/texmf-dist/doc/info:$INFOPATH; export INFOPATH
 
+# export PATH=$PATH:$HOME/LHAPDF/bin
+# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/LHAPDF/lib
+# export PYTHONPATH=$PYTHONPATH:$HOME/lib/python3.9/site-packages
+# export LHAPDF_DATA_PATH=$HOME/LHAPDF/share/LHAPDF
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
