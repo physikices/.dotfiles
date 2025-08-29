@@ -4,7 +4,7 @@ return {
     version = "*",
     config = function ()
       require("bufferline").setup({
-        -- highlights = require("catppuccin.groups.integrations.bufferline").get(),
+        highlights = require("catppuccin.groups.integrations.bufferline").get_theme(),
         options = {
           close_command = "bp|sp|bn|bd! %d",
           right_mouse_command = "bp|sp|bn|bd! %d",
