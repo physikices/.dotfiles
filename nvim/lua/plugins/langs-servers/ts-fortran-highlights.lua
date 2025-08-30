@@ -44,7 +44,9 @@ return {
     end
 
     apply_fortran_styles()
+
     vim.api.nvim_create_autocmd("ColorScheme", { callback = apply_fortran_styles })
+
 
   end,
 }

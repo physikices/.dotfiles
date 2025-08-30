@@ -22,8 +22,7 @@ return {
           enforce_regular_tabs = false,
           view = "multiwindow",
           show_buffer_close_icons = true,
-          -- separator_style = "thin",
-          separator_style = "slant",
+          separator_style = "slant", -- | "thick" | "slant" | "thin" 
           always_show_bufferline = true,
           diagnostics = false,
           themable = true,

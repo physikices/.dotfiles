@@ -11,7 +11,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 
 vim.opt.rtp:prepend(lazypath)
-
 vim.g.loaded_ruby_provider = 0
 vim.g.loaded_perl_provider = 0
 vim.g.python3_host_prog = '$HOME/.venv/bin/python3'
@@ -30,7 +29,6 @@ require("lazy").setup({
   { import = "plugins.editor" },
   { import = "plugins.langs-servers" },
   { import = "plugins.layout" },
-
   { import = "snippets" },
   install = {
     colorscheme = { "catpuccin", "default" },

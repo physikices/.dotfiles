@@ -12,7 +12,8 @@ return {
         "markdown_inline",
       },
       highlight = {
-        enable = true
+        enable = true,
+        disable = { "tex" },
       },
       indent = {
         enable = true

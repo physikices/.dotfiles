@@ -21,8 +21,8 @@ m('', 'sl', '<C-w>l')
 -- bufferline
 m("n", "<S-e>", "<cmd>BufferLinePick<CR>", s)
 
--- highlights
-m("n","<leader>h", "<cmd>nohl<CR>", s)
+-- highlights Tree-sitter
+m("n", "<leader>th", "<cmd>TSBufToggle highlight<CR>", s)
 
 -- toggle boolean
 m('n','<leader>ta','<cmd>ToggleAlternate<CR>', s)
@@ -31,30 +31,29 @@ m('n','<leader>ta','<cmd>ToggleAlternate<CR>', s)
 -- * keybindings noremape=true silent=true * --
 --
 -- save and quite
-vim.keymap.set('n', '<leader>w', '<cmd>w<CR>', {})
-vim.keymap.set('n', '<leader>q', '<cmd>q<CR>', {})
+m('n', '<leader>w', '<cmd>w<CR>', {})
+m('n', '<leader>q', '<cmd>q<CR>', {})
 
 
 -- Move Lines
-vim.keymap.set('v', '<leader>j', ":m '>+1<cr>gv=gv", {})
-vim.keymap.set('v', '<leader>k', ":m '<-2<cr>gv=gv", {})
-vim.keymap.set('n', '<leader>j', ':m.+1<CR>==', {})
-vim.keymap.set('n', '<leader>k', ':m.-2<CR>==', {})
+m('v', '<leader>j', ":m '>+1<cr>gv=gv", {})
+m('v', '<leader>k', ":m '<-2<cr>gv=gv", {})
+m('n', '<leader>j', ':m.+1<CR>==', {})
+m('n', '<leader>k', ':m.-2<CR>==', {})
 
 -- indent
-vim.keymap.set('n', '<leader>i', 'gg=G', {})
+m('n', '<leader>i', 'gg=G', {})
 
 -- close current buffer
-vim.keymap.set("n", "<leader>x", "<cmd> bp|sp|bn|bd! <CR>", {})
+m("n", "<leader>x", "<cmd> bp|sp|bn|bd! <CR>", {})
 
 -- highlights
-vim.keymap.set("n","<leader>h", "<cmd>nohl<CR>", {})
+m("n","<leader>h", "<cmd>nohl<CR>", {})
 
 -- toggle boolean
-vim.keymap.set('n','<leader>ta','<cmd>ToggleAlternate<CR>', {})
-
+m('n','<leader>ta','<cmd>ToggleAlternate<CR>', {})
 -- codeium 
-vim.keymap.set('i', '<C-g>', function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
-vim.keymap.set('i', '<C-d>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
-vim.keymap.set('i', '<C-f>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
-vim.keymap.set('i', '<C-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
+m('i', '<C-g>', function() return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
+m('i', '<C-s>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
+m('i', '<C-f>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
+m('i', '<C-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })

@@ -1,4 +1,4 @@
-; General syntax
+; General syntax LaTeX
 (command_name) @function @nospell
 
 (caption
