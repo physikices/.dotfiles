@@ -4,7 +4,8 @@ return {
     lazy = false,
     config = function ()
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
-      local lspconfig = require('lspconfig')
+      -- local lspconfig = require('lspconfig')
+      local lspconfig = vim.lsp.config
       local icons = require("user-icons")
 
       local default_diagnostic_config = {
@@ -41,10 +42,10 @@ return {
       vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
       require("lspconfig.ui.windows").default_options.border = "rounded"
 
-      lspconfig.lua_ls.setup({
+      lspconfig('lua_ls',{
         capabilities = capabilities
       })
-      lspconfig.fortls.setup({
+      lspconfig('fortls',{
         capabilities = capabilities,
         cmd = {
           'fortls',
@@ -69,15 +70,15 @@ return {
           nthreads = 1,
         },
       })
-      lspconfig.ts_ls.setup({
-        capabilities = capabilities
-      })
-      lspconfig.html.setup({
-        capabilities = capabilities
-      })
-      lspconfig.cssls.setup({
-        capabilities = capabilities
-      })
+      -- lspconfig.ts_ls.setup({
+      --   capabilities = capabilities
+      -- })
+      -- lspconfig.html.setup({
+      --   capabilities = capabilities
+      -- })
+      -- lspconfig.cssls.setup({
+      --   capabilities = capabilities
+      -- })
     end
   }
 }

@@ -111,12 +111,14 @@ return {
       fmta(
         [[
         \begin{equation*}
+          \label{eq:<>}
           <>
         \end{equation*}
         <>
         ]],
         {
           i(1),
+          i(2),
           i(0),
         }
       ),
@@ -152,13 +154,15 @@ return {
       },
       fmta(
         [[
-        \begin{align*}
+        \begin{align}
+          \label{eq:<>}
           <>
-        \end{align*}
+        \end{align}
         <>
         ]],
         {
           i(1),
+          i(2),
           i(0)
         }
       ),

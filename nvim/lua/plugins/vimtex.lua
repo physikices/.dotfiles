@@ -19,7 +19,7 @@ return {
       show_help = 0,
       show_numbers = 1,
       split_pos = 'vert leftabove',
-      split_width = 30,
+      split_width = 60,
       tocdeth = 3,
       indent_levels = 1,
       todo_sorted = 1,

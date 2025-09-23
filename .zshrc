@@ -92,10 +92,12 @@ PATH=/usr/local/texlive/2025/bin/x86_64-linux:$PATH; export PATH
 MANPATH=/usr/local/texlive/2025/texmf-dist/doc/man:$MANPATH; export MANPATH
 INFOPATH=/usr/local/texlive/2025/texmf-dist/doc/info:$INFOPATH; export INFOPATH
 
-# export PATH=$PATH:$HOME/LHAPDF/bin
-# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/LHAPDF/lib
-# export PYTHONPATH=$PYTHONPATH:$HOME/lib/python3.9/site-packages
-# export LHAPDF_DATA_PATH=$HOME/LHAPDF/share/LHAPDF
+# LHAPDF-6.5.5 paths
+export PATH=$PATH:$HOME/.config/LHAPDF-6.5.5/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/.config/LHAPDF-6.5.5/lib
+export PYTHONPATH=$PYTHONPATH:$HOME/.config/LHAPDF-6.5.5/lib/python3.13/site-packages
+export LHAPDF_DATA_PATH=$HOME/.config/LHAPDF-6.5.5/share/LHAPDF
+export PKG_CONFIG_PATH=$HOME/.config/LHAPDF-6.5.5/lib/pkgconfig:$PKG_CONFIG_PATH
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -121,6 +123,7 @@ INFOPATH=/usr/local/texlive/2025/texmf-dist/doc/info:$INFOPATH; export INFOPATH
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ls='exa --icons'
+alias chatpdf=./AppImage/ChatPDF-1.5.0-x86_64.AppImage
 
 # Habilitar modo vi
 bindkey -v
