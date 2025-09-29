@@ -13,8 +13,6 @@
   "endassociate"
   "enum"
   "endenum"
-  "select"
-  "endselect"
   "interface"
   "endinterface"
   "type"
@@ -34,6 +32,10 @@
   "elseif"
   "forall"
   "endforall"
+  "selectcase"
+  "case"
+  "default"
+  "endselect"
 ] @keyword.control
 
 ; agrupar estrutras de declaração
