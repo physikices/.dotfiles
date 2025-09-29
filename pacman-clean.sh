@@ -12,7 +12,7 @@ echo ">>> Limpando cache completo do pacman..."
 sudo pacman -Sc --noconfirm
 
 echo ">>> Limpando pacotes órfãos do AUR (paru)..."
-paru -Qdtq | paru -Rns --noconfirm -
+orphans=$(paru -Qdtq); [[ -n "$orphans" ]] && paru -Rns --noconfirm $orphans
 
 echo ">>> Limpando cache do paru..."
 paru -Sc --noconfirm
@@ -21,3 +21,5 @@ echo ">>> Limpando diretório de cache do paru manualmente..."
 rm -rf ~/.cache/paru/clone/*
 
 echo ">>> Finalizado!"
+
+
