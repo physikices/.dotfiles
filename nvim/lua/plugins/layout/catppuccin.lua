@@ -8,6 +8,10 @@ return {
       integrations = {
         bufferline = true,
         feline = true,
+        gitsigns = true,
+        notify = true,
+        telescope = true,
+        treesitter = true,
         -- adicione outras integrações que use
       },
     },
