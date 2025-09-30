@@ -1,19 +1,20 @@
 return {
-  "catppuccin/nvim",
-  lazy = false,
-  name = "catppuccin",
-  priority = 1000,
-  config = function()
-    require("catppuccin").setup({
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000, -- carrega antes de outros temas/plugins
+    opts = {
+      flavour = "mocha", -- opcional: mocha, macchiato, frappe, latte
       integrations = {
-        notify = true, -- ativa a integração com nvim-notify
-        -- você pode ativar outras integrações aqui também, como:
-        -- treesitter = true,
-        -- lsp_trouble = true,
-        -- gitsigns = true,
+        bufferline = true,
+        feline = true,
+        -- adicione outras integrações que use
       },
-    })
-    vim.cmd.colorscheme("catppuccin")
-  end,
+    },
+    config = function(_, opts)
+      require("catppuccin").setup(opts)
+      vim.cmd.colorscheme("catppuccin")
+    end,
+  },
 }
 
