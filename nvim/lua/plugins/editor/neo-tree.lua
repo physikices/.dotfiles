@@ -13,6 +13,16 @@ return {
   config = function ()
     local icons = require("user-icons")
     vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>', {})
+    
+    require("image").setup({
+      backend = "ueberzug", -- if you don't use kitty
+      integrations = {
+        neo_tree = {
+          enabled = true,
+        },
+      },
+    })
+
     require("neo-tree").setup({
       log_level = "info",
       popup_border_style = "rounded",
@@ -51,6 +61,10 @@ return {
         modified = {
           symbol = icons.ui.NewFile,
           highlight = "NeoTreeModified",
+        },
+        preview = {
+          enable = true,
+          use_image_nvim = true,  -- 🔧 diz ao Neo-tree para usar image.nvim
         },
         git_status = {
           symbols = {
