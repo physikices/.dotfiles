@@ -5,7 +5,8 @@ return {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons",
     "MunifTanjim/nui.nvim",
-    -- "3rd/image.nvim",
+    "3rd/image.nvim",
+    "antosha417/nvim-lsp-file-operations",
   },
 
 
@@ -13,6 +14,7 @@ return {
     local icons = require("user-icons")
     vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>', {})
     require("neo-tree").setup({
+      log_level = "info",
       popup_border_style = "rounded",
       enable_git_status = true,
       enable_diagnostics = true,
