@@ -57,6 +57,7 @@ button:hover {
 
 /* This section can be use if you want to separate waybar modules */
 .modules-left, .modules-right {
+  font-size: 15px;
   background: @surface0; 
   border: 1px solid @blue;
   padding-top: 0px;
@@ -64,22 +65,7 @@ button:hover {
   padding-right: 4px;
   padding-left: 4px;
   border-radius: 12px;
-
 } 
-
-/* #window.empty { */
-/*   background: transparent; */
-/*   border: none; */
-/*   padding: 0; */
-/*   margin: 0; */
-/* } */
-/**/
-/* #window { */
-/*   background: @surface0; */
-/*   border: 1px solid @blue; */
-/*   padding: 0 4px; */
-/*   border-radius: 12px; */
-/* } */
 
 #clock,
 #cpu,
