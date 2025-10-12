@@ -1,0 +1,6 @@
+# ~/.config/yazi/yazi.toml
+[opener]
+  edit = [
+    { run = "nvim %*", block = true, for = "windows" }, # For Windows
+    { run = "nvim %*", block = true }                   # For Linux/macOS
+]
