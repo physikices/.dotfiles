@@ -14,13 +14,13 @@
 
   // Declare active modules
   "modules-left": [
+    "clock",
     "hyprland/workspaces",
-    "hyprland/window",
     "custom/media"
   ],
 
   "modules-center": [
-    "clock"
+    "custom/window"
   ],
 
   "modules-right": [
@@ -62,9 +62,14 @@
     }
   },
 
+  // "hyprland/window": {
+  //   "format": "<span color='#fab387'>  {title} </span>"
+  // },
 
-  "hyprland/window": {
-    "format": " | <span color='#fab387'>  {title} </span>"
+  "custom/window": {
+    "exec": "~/.config/waybar/window_title.sh",
+    "interval": 1,
+    "return-type": "json"
   },
       
   "pulseaudio": {
@@ -90,8 +95,8 @@
   "clock": {
     "interval": 1,
     // "format": " {:%I:%M %p}", // AM PM format
-    "format": "<span color='#f9e2af'>  {:%H:%M:%S}</span>",
-    "format-alt": "<span color='#f9e2af'>  {:%H:%M    %Y, %d %B, %A}</span>",
+    "format": " <span color='#f5e0dc'>  {:%H:%M}</span>",
+    "format-alt": "<span color='#f5e0dc'>  {:%H:%M:%S    %Y, %d %B, %A}</span>",
     "tooltip-format": "<tt><big>{calendar}</big></tt>",
     "calendar": {
       "mode"          : "year",
@@ -107,6 +112,7 @@
       }
     }
   },              
+
   "actions":  {
     "on-click-right": "mode",
     "on-click-forward": "tz_up",

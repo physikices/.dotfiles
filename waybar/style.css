@@ -6,7 +6,32 @@
   font-size: 97%;
   font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
   color: @overlay0;
-  padding: 2px;
+}
+
+/* Evita que o padding global crie espaço em elementos "vazios" */
+.modules-center * {
+  padding: 0;
+}
+
+/* --- Central module container control --- */
+/* --- Controla visual do módulo custom/window --- */
+#custom-window.empty {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+#custom-window.active {
+  font-size: 13px; 
+  background: @surface0;
+  border: 1px solid @blue;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: 12px;
 }
 
 window#waybar {
@@ -31,7 +56,7 @@ button:hover {
 }
 
 /* This section can be use if you want to separate waybar modules */
-.modules-left, .modules-center, .modules-right {
+.modules-left, .modules-right {
   background: @surface0; 
   border: 1px solid @blue;
   padding-top: 0px;
@@ -42,14 +67,19 @@ button:hover {
 
 } 
 
-.modules-left, .modules-right {
-  border: 1px solid @blue;
-  padding-top: 1px;
-  padding-bottom: 1px;
-  padding-right: 4px;
-  padding-left: 4px;
-} 
-
+/* #window.empty { */
+/*   background: transparent; */
+/*   border: none; */
+/*   padding: 0; */
+/*   margin: 0; */
+/* } */
+/**/
+/* #window { */
+/*   background: @surface0; */
+/*   border: 1px solid @blue; */
+/*   padding: 0 4px; */
+/*   border-radius: 12px; */
+/* } */
 
 #clock,
 #cpu,
@@ -68,8 +98,9 @@ button:hover {
 
 #clock {
   color: @text;
+  font-size: 18px;
   margin-right: 10px;
-  margin-left: 10px;
+  margin-left: 0px;
   padding-left: 0px;
   padding-right: 0px;
 }
@@ -166,6 +197,7 @@ button:hover {
   background-color: @surface0;
   color: @text;
 }
+
 #pulseaudio-slider slider {
   min-width: 0px;
   min-height: 0px;
