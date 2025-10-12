@@ -6,7 +6,7 @@
   font-size: 97%;
   font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
   color: @overlay0;
-  padding: 1px;
+  padding: 2px;
 }
 
 window#waybar {
@@ -32,8 +32,8 @@ button:hover {
 
 /* This section can be use if you want to separate waybar modules */
 .modules-left, .modules-center, .modules-right {
-  background: @crust; 
-  border: 0px solid @overlay0;
+  background: @surface0; 
+  border: 1px solid @blue;
   padding-top: 0px;
   padding-bottom: 0px;
   padding-right: 4px;
@@ -43,7 +43,7 @@ button:hover {
 } 
 
 .modules-left, .modules-right {
-  border: 0px solid @blue;
+  border: 1px solid @blue;
   padding-top: 1px;
   padding-bottom: 1px;
   padding-right: 4px;
@@ -129,7 +129,7 @@ button:hover {
   color: @teal;
   border-radius: 10px;
   padding-left: 8px;
-  padding-right: 8px;
+  padding-bottom: 0px;
   animation: gradient_f 20s ease-in infinite;
   transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 }
@@ -157,7 +157,10 @@ button:hover {
 
 #network {
   color: @teal;
+  padding-left: 5px;
+  padding-right: 15px;
 }
+
 #network.disconnected,
 #network.disabled {
   background-color: @surface0;
@@ -188,4 +191,3 @@ button:hover {
 /*   color: @overlay0; */
 /*   border-radius: 20px; */
 /* } */
-

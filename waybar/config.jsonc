@@ -90,8 +90,8 @@
   "clock": {
     "interval": 1,
     // "format": " {:%I:%M %p}", // AM PM format
-    "format": "<span color='#fab387'>  {:%H:%M:%S}</span>",
-    "format-alt": "<span color='#fab387'>  {:%H:%M    %Y, %d %B, %A}</span>",
+    "format": "<span color='#f9e2af'>  {:%H:%M:%S}</span>",
+    "format-alt": "<span color='#f9e2af'>  {:%H:%M    %Y, %d %B, %A}</span>",
     "tooltip-format": "<tt><big>{calendar}</big></tt>",
     "calendar": {
       "mode"          : "year",
