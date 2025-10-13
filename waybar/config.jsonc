@@ -95,8 +95,8 @@
   "clock": {
     "interval": 1,
     // "format": " {:%I:%M %p}", // AM PM format
-    "format": " <span color='#f5e0dc'>  {:%H:%M}</span>",
-    "format-alt": "<span color='#f5e0dc'>  {:%H:%M:%S    %Y, %d %B, %A}</span>",
+    "format": " <span color='#74c7ec'> </span>   <span color='#f5e0dc'>{:%H:%M}   </span>",
+    "format-alt": "<span color='#f5e0dc'>     {:%H:%M:%S    %Y, %d %B, %A}</span>",
     "tooltip-format": "<tt><big>{calendar}</big></tt>",
     "calendar": {
       "mode"          : "year",
