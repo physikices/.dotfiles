@@ -12,6 +12,12 @@ m('', 'sk', '<C-w>k')
 m('', 'sj', '<C-w>j')
 m('', 'sl', '<C-w>l')
 
+-- navigate tab
+m('', 'tn', ':tabnext<Return>')
+m('', 'tp', ':tabprevious<Return>')
+m('', 'tt', ':tabnew<Return>')
+m('', 'tq', ':tabclose<Return>')
+
 -- navigate within insert mode
 -- m("i", "<C-h>", "<Left>") -- "   move left"
 -- m("i", "<C-l>", "<Right>") -- " move right"
