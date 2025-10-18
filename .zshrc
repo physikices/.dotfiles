@@ -122,6 +122,13 @@ export PKG_CONFIG_PATH=$HOME/.config/LHAPDF-6.5.5/lib/pkgconfig:$PKG_CONFIG_PATH
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias l="exa --icons --sort Name"
+alias ll="exa --icons --sort Name --long"
+alias la="exa --icons --sort Name --long --all"
+alias lr="exa --icons --sort Name --long --recurse"
+alias lra="exa --icons --sort Name --long --recurse --all"
+alias lt="exa --icons --sort Name --long --tree"
+alias lta="exa --icons --sort Name --long --tree --all"
 alias ls='exa --icons'
 alias chatpdf=./AppImage/ChatPDF-1.5.0-x86_64.AppImage
 
