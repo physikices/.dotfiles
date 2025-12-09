@@ -57,9 +57,14 @@ return {
       },
       { condition = line_begin }
     ),
-    s({trig = "--", snippetType="autosnippet"},
+    s({trig = "__", snippetType="autosnippet"},
       {t('% --------------------------------------------- %')},
       {condition = line_begin}
+    ),
+    s({trig = "--", snippetType="autosnippet", condition = tex.in_text},
+      {
+        t("\\textemdash{}"),
+      }
     ),
     -- HLINE WITH EXTRA VERTICAL SPACE
     s({trig = "hl"},
