@@ -19,7 +19,7 @@ count_selected = { fg = "#1e1e2e", bg = "#fab387" }
 border_symbol = "│"
 border_style  = { fg = "#7f849c" }
 
-syntect_theme = "~/.config/yazi/Catppuccin-mocha.tmTheme"
+# syntect_theme = "~/.config/yazi/Catppuccin-mocha.tmTheme"
 
 [tabs]
 active   = { fg = "#1e1e2e", bg = "#cdd6f4", bold = true }
@@ -121,6 +121,11 @@ tbl_cell = { fg = "#fab387", reversed = true }
 tbl_col = { bold = true }
 
 [icon]
+prepend_conds = [
+	{ if = "hidden & dir",  text = "", fg = "#313244" },  # Hidden directories
+	{ if = "dir",           text = "", fg = "#f5a97f" },  # Directories
+	{ if = "!(dir | link)", text = "", fg = "#313244" },  # Normal files (not directories or symlinks)
+]
 files = [
   { name = "kritadisplayrc", text = "", fg = "#cba6f7" },
   { name = ".gtkrc-2.0", text = "", fg = "#f5e0dc" },
@@ -329,7 +334,7 @@ exts = [
   { name = "msf", text = "", fg = "#89b4fa" },
   { name = "blp", text = "󰺾", fg = "#89b4fa" },
   { name = "less", text = "", fg = "#45475a" },
-  { name = "sh", text = "", fg = "#585b70" },
+  { name = "sh", text = "", fg = "#a6e3a1" },
   { name = "odg", text = "", fg = "#f9e2af" },
   { name = "mint", text = "󰌪", fg = "#a6e3a1" },
   { name = "dll", text = "", fg = "#11111b" },
@@ -505,7 +510,7 @@ exts = [
   { name = "fcstd1", text = "", fg = "#f38ba8" },
   { name = "out", text = "", fg = "#45475a" },
   { name = "jsx", text = "", fg = "#74c7ec" },
-  { name = "bash", text = "", fg = "#a6e3a1" },
+  { name = "bash", text = "", fg = "#a6da95" },
   { name = "edn", text = "", fg = "#74c7ec" },
   { name = "rss", text = "", fg = "#fab387" },
   { name = "flf", text = "", fg = "#f5e0dc" },
@@ -645,7 +650,7 @@ exts = [
   { name = "pl", text = "", fg = "#74c7ec" },
   { name = "ads", text = "", fg = "#f5e0dc" },
   { name = "sqlite", text = "", fg = "#f5e0dc" },
-  { name = "pdf", text = "", fg = "#585b70" },
+  { name = "pdf", text = "", fg = "#f38ba8" },
   { name = "pcm", text = "", fg = "#6c7086" },
   { name = "ico", text = "", fg = "#f9e2af" },
   { name = "a", text = "", fg = "#f5e0dc" },
@@ -687,7 +692,7 @@ exts = [
   { name = "qrc", text = "", fg = "#a6e3a1" },
   { name = "lua", text = "", fg = "#74c7ec" },
   { name = "lhs", text = "", fg = "#7f849c" },
-  { name = "md", text = "", fg = "#cdd6f4" },
+  { name = "md", text = "", fg = "#c6a0f6" },
   { name = "leex", text = "", fg = "#7f849c" },
   { name = "ai", text = "", fg = "#f9e2af" },
   { name = "lck", text = "", fg = "#bac2de" },
