@@ -99,6 +99,9 @@ export PYTHONPATH=$PYTHONPATH:$HOME/.config/LHAPDF-6.5.5/lib/python3.13/site-pac
 export LHAPDF_DATA_PATH=$HOME/.config/LHAPDF-6.5.5/share/LHAPDF
 export PKG_CONFIG_PATH=$HOME/.config/LHAPDF-6.5.5/lib/pkgconfig:$PKG_CONFIG_PATH
 
+export NVM_DIR="$HOME/.nvm"
+source /usr/share/nvm/init-nvm.sh
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment

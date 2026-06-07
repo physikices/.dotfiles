@@ -2,29 +2,29 @@
 
 set -u
 
-REMOTE="${1:-}"
-DESTINO="${2:-}"
+FROM_HERE="${1:-}"
+TO_THERE="${2:-}"
 
-if [ -z "$REMOTE" ] || [ -z "$DESTINO" ]; then
+if [ -z "$FROM_HERE" ] || [ -z "$TO_THERE" ]; then
   notify-send -u critical -i dialog-error "Rclone" "Uso: sync-remote.sh
-  <remote:> <destino>"
-  echo "Uso: $0 <remote:> <destino>"
+  <from_here:> <to_there>"
+  echo "Uso: $0 <from_here:> <to_there>"
   exit 1
 fi
 
 notify-send -u normal -i folder-sync "Rclone" "Iniciando sincronizacao de
-${REMOTE} para ${DESTINO}"
+${FROM_HERE} para ${TO_THERE}"
 
-mkdir -p "$DESTINO"
+mkdir -p "$HOME/.servers/$TO_THERE"
 
-if rclone sync -P "$REMOTE" "$DESTINO"; then
+if rclone sync -P "$FROM_HERE" "$TO_THERE"; then
   notify-send -u low -i dialog-ok "Rclone" "Sincronizacao concluida:
-  ${REMOTE} success!"
+  ${FROM_HERE} success!"
   echo
   echo "Sincronizacao concluida com sucesso."
 else
   notify-send -u critical -i dialog-error "Rclone" "Falha na sincronizacao:
-  ${REMOTE}"
+  ${FROM_HERE}"
   echo
   echo "Falha na sincronizacao."
 fi
