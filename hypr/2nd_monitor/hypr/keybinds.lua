@@ -87,11 +87,4 @@ end)
 
 -- Localdrive -> Cloudrive
 
--- hl.bind("F9", hl.dsp.exec_cmd("foot -e " .. os.getenv("HOME") .. "/Scripts/sync-remotes.sh " ..
---     os.getenv("HOME") .. "/.servers/local_protondrive remote_protondrive:"))
--- hl.bind("F10", hl.dsp.exec_cmd("foot -e " .. os.getenv("HOME") .. "/Scripts/sync-remotes.sh " ..
---     os.getenv("HOME") .. "/.servers/local_physikices remote_physikices:"))
--- hl.bind("F11", hl.dsp.exec_cmd("foot -e " .. os.getenv("HOME") .. "/Scripts/sync-remotes.sh " ..
---     os.getenv("HOME") .. "/.servers/local_mega remote_mega:"))
--- hl.bind("F12", hl.dsp.exec_cmd("foot -e " .. os.getenv("HOME") .. "/Scripts/sync-remotes.sh " ..
---     os.getenv("HOME") .. "/.servers/local_rodrigo remote_rodrigo:"))
+hl.bind("F11", hl.dsp.exec_cmd("foot -e " .. os.getenv("HOME") .. "/scripts/rclone-client.sh " .."Gdrive-ppgfClientPhysikices: " .. os.getenv("HOME") .. "/.servers/local_physikices"))
