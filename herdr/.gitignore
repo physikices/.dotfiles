@@ -1,0 +1,48 @@
+# ---------------------------------------------------------------------------
+# herdr — versionar apenas a configuração
+# Logs, sockets, estado de sessão e locks são gerados localmente em runtime.
+# ---------------------------------------------------------------------------
+
+# Logs do servidor e do cliente
+*.log
+*.log.*
+
+# Sockets (IPC local, nunca versionar)
+*.sock
+
+# Estado e metadados gerados pelo herdr
+session.json
+session.json.*
+release-notes.json
+
+# Locks de plugins/instância
+.plugins.lock
+*.lock
+
+# Diretórios de cache/estado locais
+cache/
+state/
+sessions/
+logs/
+tmp/
+
+# Backups e temporários de editor
+*.bak
+*.orig
+*~
+*.swp
+*.swo
+
+# Lixo de sistema/editor
+.DS_Store
+Thumbs.db
+.directory
+
+# Segredos locais (mantenha exemplos versionados)
+.env
+.env.*
+!.env.example
+secrets.toml
+
+# Se algum dia você instalar plugins por download, descomente para ignorá-los:
+# plugins/
