@@ -1,0 +1,72 @@
+{
+  "version": 3,
+  "workspaces": [
+    {
+      "id": "w7",
+      "custom_name": null,
+      "identity_cwd": "/home/rnasc",
+      "public_pane_numbers": {
+        "1": 1,
+        "3": 3,
+        "2": 2
+      },
+      "next_public_pane_number": 9,
+      "public_tab_numbers": [
+        1
+      ],
+      "next_public_tab_number": 4,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Split": {
+              "direction": "Vertical",
+              "ratio": 0.45306116,
+              "first": {
+                "Pane": 1
+              },
+              "second": {
+                "Split": {
+                  "direction": "Horizontal",
+                  "ratio": 0.36530054,
+                  "first": {
+                    "Pane": 2
+                  },
+                  "second": {
+                    "Pane": 3
+                  }
+                }
+              }
+            }
+          },
+          "panes": {
+            "1": {
+              "cwd": "/home/rnasc",
+              "agent_session": {
+                "source": "herdr:opencode",
+                "agent": "opencode",
+                "kind": "id",
+                "value": "ses_e7b1573e1ffe8o3XoP7kYmOPcm"
+              }
+            },
+            "2": {
+              "cwd": "/home/rnasc/.config/herdr"
+            },
+            "3": {
+              "cwd": "/home/rnasc"
+            }
+          },
+          "zoomed": false,
+          "focused": 3,
+          "root_pane": 1
+        }
+      ],
+      "active_tab": 0
+    }
+  ],
+  "active": 0,
+  "selected": 0,
+  "sidebar_width": null,
+  "sidebar_section_split": null,
+  "collapsed_space_keys": []
+}
